@@ -10,5 +10,9 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 ## 2. Python
 
+Defautly Webots use the system python. However, one would prefer a virtual env create via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+
+Here we are showing a setup for anaconda.
+
 
 
