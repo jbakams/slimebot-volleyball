@@ -16,7 +16,7 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 Defautly Webots use the system python. However, one would prefer a virtual env create via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
-Here we are showing a setup for anaconda.
+(To be continued ....)
 
 ## 3. Training of the single agent
 
@@ -25,7 +25,7 @@ The image above shows the traing of a  [OpenAi baselines PPO](https://github.com
 We were launching the ball on the side of the trainer (yellow player) but after 10 M timesteps no imporvement has been shown. The reason is that, as the ball is always launched in randomly in the 3 axes the ball was practically not hitting the agent to make it understanding how good it is to hit the ball.
 
 <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_5.gif"></img>
 </p>
 
 
