@@ -25,7 +25,7 @@ The image above shows the traing of a  [OpenAi baselines PPO](https://github.com
 We were launching the ball on the side of the trainer (yellow player) but after 10 M timesteps no imporvement has been shown. The reason is that, as the ball is always launched in randomly in the 3 axes the ball was practically not hitting the agent to make it understanding how good it is to hit the ball.
 
 <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_5.gif"></img>
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
 </p>
 
 
@@ -39,7 +39,7 @@ We realized that by starting in a low level of sparsity and incrementing it prog
   - The scene has a depth (z axis) of 24 units,we deivided it by 4 and start training the agent in a scene of depth equals to 6 units. To maximize its opportunity to hit the ball.
   
   <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_5.gif"></img>
   </p>
   
   - After seeing that the agent has started to master the environment and reach of particular performance (mean reward or mean episode length) we upgrade the depth (let say 12 units) and continue the training. We noticed that,after increasing the depth, the performance will downgrade a bit before starting to go up again. But, at least the agent was able to follow the ball everywhere but was just missing it sometimes.
