@@ -70,7 +70,7 @@ After this experiment some questions is left to us to investigate in. As we noti
 -  After the initial depth, should we go to short incrematation or we can directly jump to the maximum depth
 -  How to explain that scientifically
 
-## 4. The Main Goal
+## 4. The Main Goals
 
 ### 4.1. Team play
 
@@ -89,7 +89,7 @@ We are setup up a multi-agent team play environment to run some basic experiment
 - See if a NN trained in a single environment can learn to collaborate in team-play environment
 - And all other ideas that will pop up in our minds
 
-### 4.2. Use Webots built-in sensors
+### 4.2. Using Webots built-in sensors
 
 The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensor such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
