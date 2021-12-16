@@ -29,7 +29,7 @@ Defautly Webots use the system python. However, one would prefer a virtual env c
 
 ## 3. Training of the single agent
 
-The image above shows the traing of a  [OpenAi baselines PPO](https://github.com/openai/baselines/tree/master/baselines/ppo1) agent using state observation which includes: location and speed xyz-coordinates of the ball, the opponent and itself (18 input size). The agent is playing both side but uses the experience of the yellow player to update its policy.
+The image above shows the traing of a  [OpenAi baselines PPO](https://github.com/openai/baselines/tree/master/baselines/ppo1) agent using state observation which includes: location and speed xyz-coordinates of the ball, the opponent and itself (18 input size). The same neural network is playing both sides but uses the experience of the yellow player to update its policy.
 
 We were launching the ball on the side of the trainer (yellow player) but after 10 M timesteps no imporvement has been shown. The reason is that, as the ball is always launched in randomly in the 3 axes the ball was practically not hitting the agent to make it understanding how good it is to hit the ball.
 
