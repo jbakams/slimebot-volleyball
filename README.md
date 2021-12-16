@@ -6,6 +6,8 @@
 
 3D-volleyball it's a 3d versions of the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) using [Webots](https://cyberbotics.com/) for the visualization. We added a dimension in the slimevolleygym environment and kept the same settings to see if agents will still be able to learn to master the game.
 
+**Notes:** We apologize for the power design of the game, we are working on it.
+
 # Installation
 
 ## 1. Webots
@@ -30,7 +32,7 @@ We were launching the ball on the side of the trainer (yellow player) but after 
 
 
 
-## 3.1. Incrementing sparsity of the training environement
+### 3.1. Incrementing sparsity of the training environement
 
 To make it work, we trained the agent in the 3 dimensions environment by stucking the z-axis (meaning the agent will read the 3 axes but the z value of both location and speed will always be zero). We noticed that the agent was training correctly as in 2d [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment.
 
@@ -46,7 +48,7 @@ We realized that by starting in a low level of sparsity and incrementing it prog
   - We repeated the same rule of upgration of the depth until the agent will start playting on the maximum depth of the scene meaning 24 units.
   - Depending on the initialization of the Neural Network, in one of the experiment the agent was able to play almost perfectly the game in more or less 10 millions timesteps (sometimes it needs above 20 M timesteps)
 
-## 3.2. Problem to solve
+### 3.2. Problem to solve
 
 After this experiment some questions is left to us to investigate in. As we noticed that the 3d version is training by a low level of complexity of the state environment. What is the better way to upgrade the environment when the agent starts to play correctly the game:
 
