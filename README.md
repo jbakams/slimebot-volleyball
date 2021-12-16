@@ -8,7 +8,7 @@
 </p>
 
 
-3D-volleyball it's a 3d versions of the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) using [Webots](https://cyberbotics.com/) for the visualization. We added a dimension in the slimevolleygym environment and kept the same settings to see if agents will still be able to learn to master the game.
+3D-volleyball it's a 3d versions of the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) using [Webots](https://cyberbotics.com/) for the visualization. We added a dimension in the slimevolleygym environment and kept the same settings to see if agents will still be able to learn to the game.
 
 **Notes:** We apologize for the:
 -  Poor design of the game, we are working on it. We suppose the game area is surrounded by a wall that we kept invisble for visualization.
