@@ -37,6 +37,11 @@ To make it work, we trained the agent in the 3 dimensions environment by stuckin
 We realized that by starting in a low level of sparsity and incrementing it progressively as the agent is getting used to the environment was very helpful. So we did the following:
 
   - The scene has a depth (z axis) of 24 units,we deivided it by 4 and start training the agent in a scene of depth equals to 6 units. To maximize its opportunity to hit the ball.
+  
+  <p align="center">
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
+  </p>
+  
   - After seeing that the agent has started to master the environment and reach of particular performance (mean reward or mean episode length) we upgrade the depth (let say 12 units) and continue the training. We noticed that,after increasing the depth, the performance will downgrade a bit before starting to go up again. But, at least the agent was able to follow the ball everywhere but was just missing it sometimes.
   - We repeated the same rule of upgration of the depth until the agent will start playting on the maximum depth of the scene meaning 24 units.
   - Depending on the initialization of the Neural Network, in one of the experiment the agent was able to play almost perfectly the game in more or less 10 millions timesteps (sometimes it needs above 20 M timesteps)
