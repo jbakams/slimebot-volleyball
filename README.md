@@ -4,7 +4,7 @@
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation.gif"></img>
 </p>
 <p align="center">
-  <em>image_caption</em>
+  <em>Self-play training of a PPO agent</em>
 </p>
 
 
@@ -33,6 +33,9 @@ We were launching the ball on the side of the trainer (yellow player) but after 
 <p align="center">
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
 </p>
+<p align="center">
+  <em>The agent training with the full depth at the beggining</em>
+</p>
 
 
 
@@ -46,6 +49,9 @@ We realized that by starting in a low level of sparsity and incrementing it prog
   
   <p align="center">
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_5.gif"></img>
+  </p>
+  <p align="center">
+  <em>The agent training with a narrowed depth at the beggining. Notice that he started to follow the ball</em>
   </p>
   
   - After seeing that the agent has started to master the environment and reach of particular performance (mean reward or mean episode length) we upgrade the depth (let say 12 units) and continue the training. We noticed that,after increasing the depth, the performance will downgrade a bit before starting to go up again. But, at least the agent was able to follow the ball everywhere but was just missing it sometimes.
@@ -65,11 +71,18 @@ After this experiment some questions is left to us to investigate in. As we noti
 
 ### 4.1. Team playing
 
+<p align="center">
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/team.png"></img>
+  </p>
+  <p align="center">
+  <em>Team play volleyball</em>
+  </p>
+
 We are setup up a multi-agent team play environment to run some basic experiments such as:
 
 - The whole team managed by the same neural network;
 - Each teammate will be an independent NN
-- See the possibility of runnung Multi-Agent RL algorithms: QMix, MAD4PG, etc.
+- See the possibility of running Multi-Agent RL algorithms: QMix, MAD4PG, etc.
 - See if a NN trained in a single environment can learn to collaborate in team-play environment
 - And all other ideas that will pop up in our minds
 
