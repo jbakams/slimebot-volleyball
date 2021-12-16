@@ -24,6 +24,12 @@ The image above shows the traing of a  [OpenAi baselines PPO](https://github.com
 
 We were launching the ball on the side of the trainer (yellow player) but after 10 M timesteps no imporvement has been shown. The reason is that, as the ball is always launched in randomly in the 3 axes the ball was practically not hitting the agent to make it understanding how good it is to hit the ball.
 
+<p align="center">
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
+</p>
+
+
+
 ## 3.1. Incrementing sparsity of the training environement
 
 To make it work, we trained the agent in the 3 dimensions environment by stucking the z-axis (meaning the agent will read the 3 axes but the z value of both location and speed will always be zero). We noticed that the agent was training correctly as in 2d [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment.
