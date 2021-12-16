@@ -69,7 +69,7 @@ After this experiment some questions is left to us to investigate in. As we noti
 
 ## 4. The Main Goal
 
-### 4.1. Team playing
+### 4.1. Team play
 
 <p align="center">
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/team.png"></img>
