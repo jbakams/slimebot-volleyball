@@ -37,7 +37,7 @@ We were launching the ball on the side of the trainer (yellow player) but after 
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
 </p>
 <p align="center">
-  <em>The agent training with the full depth at the beggining</em>
+  <em>Training the agent with the full depth at the beggining (Notice the ball is always launched on the side of the learner)</em>
 </p>
 
 
