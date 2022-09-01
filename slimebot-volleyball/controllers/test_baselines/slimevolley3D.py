@@ -1,16 +1,14 @@
 """
-Port of Neural Slime Volleyball to Python Gym Environment
+This is game is built on top of the slimevolleygym game. The code has been adjusted to 
+make it work in a 3 coodrdinate setting and react with the simulator software Webots
 
-David Ha (2020)
+Original game:
+https://github.com/hardmaru/slimevolleygym
 
-Original version:
-
-https://otoro.net/slimevolley
-https://blog.otoro.net/2015/03/28/neural-slime-volleyball/
-https://github.com/hardmaru/neuralslimevolley
-
-No dependencies apart from Numpy and Gym
+Simulator:
+https://github.com/cyberbotics/webots
 """
+
 
 import logging
 import math
@@ -22,14 +20,13 @@ import numpy as np
 import cv2 # installed with gym anyways
 from collections import deque
 from time import sleep
-from controller import Supervisor ## Webots method to control nodes in the 3D scene area
+from controller import Supervisor ## Webots class to control nodes in the 3D scene area
 
 
 np.set_printoptions(threshold=20, precision=3, suppress=True, linewidth=200)
 
 # game settings:
 
-RENDER_MODE = True
 TIMESTEP = 1/30.
 NUDGE = 0.1
 FRICTION = 1.0 # 1 means no FRICTION, less means FRICTION
@@ -50,24 +47,24 @@ class World:
     All parameters are static except the depth that let the user the option of chosing an initial value in the
     interval [0, 24]
     
-    :param upgrade (bool): If "True" the agent will be upgrading the court depth during the training,
-                           If "False" the agent will be training with the court maximum depth
+    :param update (bool): If "True" the agent will be incrementating the court depth during the training,
+                          If "False" the agent will be training with the court maximum depth                          
     :param width: The width (x-axis) of the court
     :param height: The height (y-axis) of the court
-    :param depth: The depth that the agent will be currently training value between 0 and max_depth
-    :param max_deepth: The maximum depth of the court
-    :param step: Defines how much depth should increase if the update function is called
+    :param depth: The depth (z-axis) of the court.
+    :param max_deepth: The maximum depth of the court defautly 24
+    :param step: Defines how much depth should be incremented if the update_world function is called
     :param wall_depth: The court fence width
     :param wall_height: The court fence height
     :param wall_depth: The court fence depth (dynamic as the depth)
     :param player_v (x/y/z): The palyer speed according the specific axis
     :param max_ball_v: The maximum speed the ball can take
-    :param gravity: The world gravity speed        
+    :param gravity: The world gravity        
     """
 
     def __init__(self, update = True):
      
-        self.width = 24*2
+        self.width = 48
         self.height = self.width
         self.max_depth = self.width/2
         self.step = -np.inf
@@ -75,9 +72,9 @@ class World:
         self.wall_width = 1.0 
         self.wall_height = 2.0
         self.wall_depth = -np.inf
-        self.player_vx = 10*1.75
-        self.player_vy = 10*1.35
-        self.player_vz = 10*1.75
+        self.player_vx = 17.5
+        self.player_vy = 13.5
+        self.player_vz = 17.5
         self.max_ball_v = 15*1.5       
         self.gravity = -9.8*2*1.5   
         self.update = update
@@ -86,7 +83,7 @@ class World:
     def setup(self, n_update = 4, init_depth = 6):
         """
         Function that set up the depth of the environement before and during the training.
-        if upgrade = True the depth is setup, else the depth is set equal to the maximum depth
+        If update = True the depth is setup, else the depth is set equal to the maximum depth
         
         :param n_upgr: The number of time the depth will be updated during the training
         :param init_depth: The intial depth of the court at the beginning of the training
@@ -103,16 +100,17 @@ class World:
         """
         Function that update the depth of the court if the parameter "update" is True
         """
-        if self.upgrade:         
+        if self.update:         
             self.depth +=  self.step
             self.wall_depth = self.depth      
           
         if self.depth >= self.max_depth:
             self.depth = self.max_depth
             self.wall_depth = self.depth                              
-            self.upgrade = False
+            self.update = False
           
-WORLD = World()   
+
+WORLD = World() # 
       
 class DelayScreen:
     """ 
@@ -132,14 +130,15 @@ class DelayScreen:
 
 class Particle:
     """ 
-    used for the ball, and also for the round stub above the fence 
+    used for the ball, and also for the curved stub above the fence 
     :params x,y,z: represent the current position of the particule
     :params prev_x, prev_y, prev_z: represent the positon of the particule at the previous timestep
     :params vx, vy, vz: represent the speed coordinates of the particule
-    :param r: represents the radius of the particule
-    :param name: The name of the particule, allows webots to recognize which object in the 3D scene the particule represents
+    :param r: represents the radius of the particule following x_axis
+    :param name: The name of the particule, allows webots to recognize which object the particule represents
+                 in the 3D scene.
     :param particule: Enables Webots supervisor method to control the particule in the 3D view
-    :param location: Controls the particule location in Webots 3D window
+    :param location: Controls the particule location in Webots 3D scene
     """
     def __init__(self, x, y, z, vx, vy, vz, r, name):
         self.x = x
@@ -151,7 +150,9 @@ class Particle:
         self.vx = vx
         self.vy = vy
         self.vz = vz 
-        self.r = r               
+        self.r = r     
+         
+        # Webots settings         
         self.particule = supervisor.getFromDef(name)
         self.location = self.particule.getField("translation")
         self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
@@ -170,7 +171,7 @@ class Particle:
     
     def applyAcceleration(self, ax, ay, az):
         """
-        Apply acceleration to the particule when a collision occur.
+        Apply acceleration to the particule when a collision occurs.
         :params ax, ay, az: the coordinates of the acceleration vector
         """
         self.vx += ax * TIMESTEP
@@ -182,7 +183,7 @@ class Particle:
         Check that the partcicule respect the game rule
         """
         
-        #If the particule x-location goes beyond the court width lock it at the limit
+        # Avoid the particule x-location to go beyond the court width
         if (self.x <= (self.r-WORLD.width/2)):
             self.vx *= -FRICTION
             self.x = self.r-WORLD.width/2+NUDGE*TIMESTEP    
@@ -190,7 +191,7 @@ class Particle:
             self.vx *= -FRICTION;
             self.x = WORLD.width/2-self.r-NUDGE*TIMESTEP
         
-        # Make sure the particule moves correctly on the z-axis according to the current court depth  
+        # Make sure the particule moves properly on the z-axis according to the current depth  
         if WORLD.depth >= self.r:        
             if (self.z<=(self.r-WORLD.depth/2)):
                 self.vz *= -FRICTION * (WORLD.depth/WORLD.max_depth)
@@ -207,7 +208,7 @@ class Particle:
                 self.vz *= -FRICTION * (WORLD.depth/WORLD.max_depth);
                 self.z = WORLD.depth/2-NUDGE*TIMESTEP        
     
-        #If the particule hit the floor, prevent it from crossing the ground
+        #If the particule hit the floor, prevent it from crossing the floor
         if (self.y<=(self.r)):
             self.vy *= -FRICTION
             self.y = self.r+NUDGE*TIMESTEP         
@@ -218,12 +219,12 @@ class Particle:
             else:
                 return 1 # The right player loses a life
                 
-        #Avoid the particule to go beyond the world height    
+        # Avoid the particule to go beyond the world maximum height    
         if (self.y >= (WORLD.height-self.r)):
             self.vy *= -FRICTION
             self.y = WORLD.height-self.r-NUDGE*TIMESTEP
           
-        # avoid the particule from crosssing the fence:
+        # Avoid the particule to cross the fence:
         if ((self.x <= (WORLD.wall_width/2+self.r)) and (self.prev_x > (WORLD.wall_width/2+self.r)) and (self.y <= WORLD.wall_height)):
             self.vx *= -FRICTION
             self.x = WORLD.wall_width/2+self.r+NUDGE*TIMESTEP
@@ -322,7 +323,7 @@ class Particle:
 
 class RelativeState:
     """
-    keeps track of the obs.
+    keeps track of the mobile objects in the game.
     Note: the observation is from the perspective of the agent.
     an agent playing either side of the fence must see obs the same way
     """
@@ -360,14 +361,15 @@ class RelativeState:
 class Agent():
     """ 
     keeps track of the agent in the game. note this is not the policy network 
+    
     :params x, y, z: locations coordinates
     :params vx, vy, vz: speed coordinates
     :param desired_v (x/y/z):
-    :param state:
+    :param state:Instance of the Relative class used to track mobile objects in the scene
     :param life: Number of life during the game (maximum 5)
     :param name: The name of the agent, allows webots to recognize which object in the 3D scene is represented by the agent
-    :param agent: Allows Webots to track the agent position in the 3D window
-    :param location: controlls the location of the agent in Webots 3D view
+    :param agent: Allows to track the agent in Webots
+    :param location: controls the location of the agent in Webots 3D scene
     """
     def __init__(self, dir, x, y, z, name):
     
@@ -387,6 +389,7 @@ class Agent():
         self.emotion = "happy"; # hehe...
         self.life = MAXLIVES
         
+        # Webots settings
         self.agent = supervisor.getFromDef(name)
         self.location = self.agent.getField("translation")
         self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
@@ -462,7 +465,7 @@ class Agent():
         self.vz = self.desired_vz   
         self.move()
     
-        #Make sure the agant is not crossing the floor
+        #Make sure the agent doesn't cross the floor
         if (self.y <= 0):
             self.y = 0;
             self.vy = 0;
@@ -529,14 +532,15 @@ class Agent():
 
 class BaselinePolicy:
     """
-    Except that a agent is given as baseline, the random agent will serve as the baseline
+    Except that an agent is given as baseline, the random agent will serve as the baseline
     """
-    def __init__(self, agent = None):
+    def __init__(self, agent = None, env = None):
         self.agent = agent
+        self.env = env
     
     def predict(self, obs):
-        if self.best_model is None:
-            raise NotImplementedError
+        if self.agent is None:
+            return self.env.action_space.sample()
         else:
             action, _ = self.agent.predict(obs)
         return action
@@ -544,8 +548,9 @@ class BaselinePolicy:
 class Game:
     """
     The game setting.
+    
     :param np_random: Endling the randomazition of the domain
-    :param training (bool): if set "True" the ball will always be launched on the side of the learning agent (the yellow)
+    :param training (bool): If "True" the ball will always be launched on the side of the learning agent (the yellow)
     :param ball: An instance of the Particule class that will serve as the game ball
     :param fenceStub:An instance of the Particule class that will serve as the curve shape on the top of the fence
     :agent (left/right) : Agents of the game (left: blue, right: yellow)
@@ -565,11 +570,11 @@ class Game:
         """
         Brining the game to the initial set up
         
-        NOTE: Names (strings) given to objects are set such that Webots will recognize them. Modifying them will require to
-              rectify in Webots too (which could be tadeous), otherwise errors will occur.
+        NOTE: Names (strings parameters) given to objects are set in a way that Webots will recognize them. Modifying 
+        them will require to rectify in Webots too (which could be tadeous), otherwise errors will occur.
         """      
         self.fenceStub = Particle(0, WORLD.wall_height, 0, 0, 0, 0, WORLD.wall_width/2, "FENCESTUB");
-        if self.training:
+        if self.training: # Launch the ball on the trainer's side
           ball_vx = self.np_random.uniform(low=0, high=20)
         else:
           ball_vx = self.np_random.uniform(low=-20, high=20)       
@@ -583,7 +588,7 @@ class Game:
         self.delayScreen = DelayScreen()
     
     def newMatch(self):
-        """reinitialze main objects positions at the beginning of a new match
+        """reinitialze mobile objects positions at the beginning of a new match
         """
         if self.training:
             ball_vx = self.np_random.uniform(low=0, high=20)
@@ -654,20 +659,17 @@ class Game:
 
 class Slime3DEnv(gym.Env):
     """
-    The main game environment. This enviroment operate the same way as the original slimevolley
-    gym environnment with just a few differences.
+    The main game environment. This enviroment works, with some additional differences, the same
+    as the original version (https://github.com/hardmaru/slimevolleygym)
+
     
     The function "update_world", if called while training, allows the trainer (the right agent)
-    to modify the environment depth.
+    to increment the environment depth.
     
     The game ends when an agent loses 5 lives (or at t=3000 timesteps). If running in Webots,
-    there is a life counter on the corners of the 3D view.
+    there are lifes counter for both agents on the top corners of the 3D view.
     """
-    metadata = {
-      'render.modes': ['human', 'rgb_array', 'state', 'webots'],
-      'video.frames_per_second' : 50
-    }
-
+    
     action_table = [[0, 0, 0, 0, 0], # NOOP
                     [1, 0, 0, 0, 0], # FORWARD
                     [1, 0, 1, 0, 0], # FORWARD JUMP
@@ -697,25 +699,15 @@ class Slime3DEnv(gym.Env):
     :param update (bool): If "True" the agent will start its training with a selected initial depth
                           and will be increasing when the function "update_world" is called. If
                           If "False" the agent start the training directelyvwith the world maximal
-                          depth.                          
+                          depth.
+    :param t (int) : keeps track of the cureent timestep during the game
+    :pram t_limit (int): Maximum number of timesteps for a game
+    :world (World class instance): Keeps track of the physical aspect of the court
+    :ret (int): cumulative reward at the current timestep                                             
     """
 
-    def __init__(self, training = False, update = False):
-   
-        """
-        Reward modes:
-    
-        net score = right agent wins minus left agent wins
-    
-        0: returns net score (basic reward)
-        1: returns 0.01 x number of timesteps (max 3000) (survival reward)
-        2: sum of basic reward and survival reward
-    
-        0 is suitable for evaluation, while 1 and 2 may be good for training
-    
-        Setting multiagent to True puts in info (4th thing returned in stop)
-        the otherObs, the observation for the other agent. See multiagent.py
-        """
+    def __init__(self, training = False, update = False):    
+        
         
         self.t = 0
         self.t_limit = 3000
@@ -724,6 +716,7 @@ class Slime3DEnv(gym.Env):
         self.training = training
         self.update = update
         self.world = WORLD #
+        self.ret = 0
            
         
         if self.atari_mode: ## Not sure there is an atari compatibility with the 3d version
@@ -739,11 +732,11 @@ class Slime3DEnv(gym.Env):
             high = np.array([np.finfo(np.float32).max] * 18)
             self.observation_space = spaces.Box(-high, high)
         
-        self.previous_rgbarray = None   
+         
         self.game = Game(training = self.training)
         self.ale = self.game.agent_right # for compatibility for some models that need the self.ale.lives() function
     
-        self.policy = BaselinePolicy() # the “bad guy”   
+        self.policy = BaselinePolicy(env = self) # the “bad guy”   
         self.viewer = None
     
         # another avenue to override the built-in AI's action, going past many env wraps:
@@ -801,14 +794,19 @@ class Slime3DEnv(gym.Env):
         self.game.agent_right.setAction(action) # external agent is agent_right
     
         reward = self.game.step()
+        self.ret += reward
     
         obs = self.getObs()
-    
+        
+        epinfos = {} ## important for te stablebaselines PPO2
         if self.t >= self.t_limit:
-            done = True    
+            done = True   
+            epinfos = {'r': self.ret, 'l': self.t }
+              
         if self.game.agent_left.life <= 0 or self.game.agent_right.life <= 0:
             done = True
-    
+            epinfos = {'r': self.ret, 'l': self.t }
+            
         otherObs = None
         if self.multiagent:
             if self.from_pixels:
@@ -824,6 +822,7 @@ class Slime3DEnv(gym.Env):
               'otherState': self.game.agent_left.getObservation(),
               'otherAction': otherAction  ## the opponent action
                }
+        info.update(epinfos)
                   
         if self.survival_bonus:
               return obs, reward+0.01, done, info
@@ -831,6 +830,7 @@ class Slime3DEnv(gym.Env):
 
     def init_game_state(self):
         self.t = 0
+        self.ret = 0
         self.game.reset()
         if self.training:          ##################################
             self.game.training = True ##################################"
@@ -849,11 +849,12 @@ class Slime3DEnv(gym.Env):
     def get_action_meanings(self):
         return [self.atari_action_meaning[i] for i in self.atari_action_set]
     
-    def uupdate_world(self):  
+    def update_world(self):  
         if self.update:
             self.world.update_world()
         if not self.world.update:
             self.update = False
+            self.training = False
       
     def draw_agent_name(self):
         """
@@ -937,66 +938,3 @@ class Slime3DEnv(gym.Env):
                               0.0, # Transparency
                               "Tahoma", # Font
                               )          
-          
-class Slime3DPixelEnv(Slime3DEnv):
-    from_pixels = True
-
-class Slime3DAtariEnv(Slime3DEnv):
-    from_pixels = True
-    atari_mode = True
-
-class Slime3DSurvivalAtariEnv(Slime3DEnv):
-    from_pixels = True
-    atari_mode = True
-    survival_bonus = True
-
-class SurvivalRewardEnv(gym.RewardWrapper):
-    def __init__(self, env):
-        """
-        adds 0.01 to the reward for every timestep agent survives
-    
-        :param env: (Gym Environment) the environment
-        """
-        gym.RewardWrapper.__init__(self, env)
-
-    def reward(self, reward):
-        """
-        adds that extra survival bonus for living a bit longer!
-    
-        :param reward: (float)
-        """
-        return reward + 0.01
-
-class FrameStack(gym.Wrapper):
-    def __init__(self, env, n_frames):
-        """Stack n_frames last frames.
-    
-        (don't use lazy frames)
-        modified from:
-        stable_baselines.common.atari_wrappers
-    
-        :param env: (Gym Environment) the environment
-        :param n_frames: (int) the number of frames to stack
-        """
-        gym.Wrapper.__init__(self, env)
-        self.n_frames = n_frames
-        self.frames = deque([], maxlen=n_frames)
-        shp = env.observation_space.shape
-        self.observation_space = spaces.Box(low=0, high=255, shape=(shp[0], shp[1], shp[2] * n_frames),
-                                            dtype=env.observation_space.dtype)
-    
-    def reset(self):
-        obs = self.env.reset()
-        for _ in range(self.n_frames):
-            self.frames.append(obs)
-        return self._get_ob()
-    
-    def step(self, action):
-        obs, reward, done, info = self.env.step(action)
-        self.frames.append(obs)
-        return self._get_ob(), reward, done, info
-    
-    def _get_ob(self):
-        assert len(self.frames) == self.n_frames
-        return np.concatenate(list(self.frames), axis=2)
-

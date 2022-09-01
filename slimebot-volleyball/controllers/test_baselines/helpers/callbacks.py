@@ -1,4 +1,6 @@
 
+# Stablebaselines Evalcallback class tricked to keep track on the episode mean length
+
 import os
 from abc import ABC
 import warnings
@@ -111,7 +113,7 @@ class EvalCallback(EventCallback):
                       "episode_reward={:.2f} +/- {:.2f}".format(self.num_timesteps, mean_reward, std_reward))
                 print("Episode length: {:.2f} +/- {:.2f}".format(mean_ep_length, std_ep_length))           
                     
-            """if mean_ep_length == self.best_mean_len and mean_reward  > self.best_mean_reward:
+            if  mean_reward  > self.best_mean_reward:
             
                 if self.verbose > 0:
                     print("New best mean reward!")
@@ -120,9 +122,9 @@ class EvalCallback(EventCallback):
                 self.best_mean_reward = mean_reward
                 # Trigger callback if needed
                 if self.callback is not None:
-                    return self._on_event()"""
+                    return self._on_event()
                     
-            if mean_ep_length > self.best_mean_len:
+            """if mean_ep_length > self.best_mean_len:
                 if self.verbose > 0:
                     print("New best mean lenght!")
                 if self.best_model_save_path is not None:
@@ -130,6 +132,6 @@ class EvalCallback(EventCallback):
                 self.best_mean_len = mean_ep_length
                 # Trigger callback if needed
                 if self.callback is not None:
-                    return self._on_event()
+                    return self._on_event()"""
 
         return True
