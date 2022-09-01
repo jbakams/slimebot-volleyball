@@ -32,6 +32,10 @@ On the Preferences window in the *python command* line set the path the python o
 
 Hence, we are all set. The virtual environment can be managed regardless of Webots. It can be used for any other projects apart from those using Webots. To use another virtual environment, just change the path to another one.
 
+# 2. Webots
+
+[Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. In this section we are explaining the important options regarding our projects.
+
 
 
 
