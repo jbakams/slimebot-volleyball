@@ -30,7 +30,7 @@ On the Preferences window in the *python command* line set the path the python o
   <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref1.png"></img>
 </p>
 
-Hence, we are all set. The virtual environment can be managed regardless of Webots. It can be used for any other projects apart from those using Webots. To use another virtual environment, just change the path to another one.
+Hence, we are all set. The virtual environment can be managed regardless of Webots. It can be used for any other projects apart from those using Webots. To use another virtual environment, just change the path.
 
 # 2. Webots
 
