@@ -45,6 +45,7 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
  Typical Webots interface
 </p>
 According to the number in the image above:
+
 1. 3D scene: Used to render simulations of objects
 2. Console: Webots has an built-in console that help to follow up simulations progress
 3. IDE: Webots has a built-in IDE that allows to type codes and scripts directly in Webots
