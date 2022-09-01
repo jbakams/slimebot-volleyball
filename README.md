@@ -23,7 +23,7 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 ## 2. Python
 
-Defautly Webots use the system python. However using a virtual env created via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) is more convinient. We recommand python 3.7 but the environment is fine with any python 3.x. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise you can use the following [steps](https://cyberbotics.com/doc/guide/using-python) to set up python in R2021b.
+Defautly Webots use the system python. However using a virtual env created via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) is more convinient. Though the environment is fine with anyt pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://cyberbotics.com/doc/guide/using-python) to set up python in R2021b.
 
 ## 3. Training of the single agent
 
