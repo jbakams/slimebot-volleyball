@@ -19,7 +19,7 @@
 
 ## 1. Webots
 
-Webots is open soure and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/) and Install it from its official webesite. 
+Webots is open soure and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/)from its official website and [Install](https://cyberbotics.com/doc/guide/installing-webots) it following the official guidline. We recommand the version R2021b to avoid compatibility bugs with more recent versions.
 
 ## 2. Python
 
