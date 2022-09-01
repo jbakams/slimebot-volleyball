@@ -24,7 +24,8 @@ And any additional library one would like to use ([Tensorflow](https://www.tenso
 
 ## python path in Webots R2021b
 
-Open Webots. On the top right go to the follwoing options: *Tools>Preferences>*
+Open Webots. On the top right go to the follwoing options: *Tools>Preferences*
+
 On the Preferences window in the *python command* line set the path the python of the virtual environment
 <p align="center">
   <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref1.png"></img>
