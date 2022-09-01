@@ -59,7 +59,8 @@ class World:
     :param wall_depth: The court fence depth (dynamic as the depth)
     :param player_v (x/y/z): The palyer speed according the specific axis
     :param max_ball_v: The maximum speed the ball can take
-    :param gravity: The world gravity        
+    :param gravity: The world gravity
+    :param stuck: If True the environment depth will keep the initial dpeth during the whole training        
     """
 
     def __init__(self, update = True):
@@ -78,9 +79,10 @@ class World:
         self.max_ball_v = 15*1.5       
         self.gravity = -9.8*2*1.5   
         self.update = update
+        self.stuck = False
         self.setup()
   
-    def setup(self, n_update = 4, init_depth = 6):
+    def setup(self, n_update = 6, init_depth = 4):
         """
         Function that set up the depth of the environement before and during the training.
         If update = True the depth is setup, else the depth is set equal to the maximum depth
@@ -90,7 +92,10 @@ class World:
         """
         
         if not self.update:
-            self.wall_depth = self.depth = self.max_depth      
+            self.wall_depth = self.depth = self.max_depth 
+        elif self.stuck:
+            self.step = 0
+            self.wall_depth = self.depth = init_depth        
         else: 
             self.step = self.max_depth/n_update  
             self.wall_depth  = self.depth = init_depth  
