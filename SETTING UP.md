@@ -39,7 +39,7 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 ## Interface overview
 
 <p align="center">
-  <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref2.png"></img>
+  <img width="45%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref2.png"></img>
 </p>
 <p align="center">
  Typical Webots interface
