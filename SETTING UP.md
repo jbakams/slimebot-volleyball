@@ -34,7 +34,9 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 
 # 2. Webots
 
-[Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. In this section we are explaining the important options regarding our projects.
+[Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. You can refer to the [User Guide](https://cyberbotics.com/doc/guide/getting-started-with-webots) to have an overview how it works. In this section we are explaining the important options regarding our projects.
+
+## 
 
 
 
