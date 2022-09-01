@@ -60,7 +60,7 @@ class World:
     :param player_v (x/y/z): The palyer speed according the specific axis
     :param max_ball_v: The maximum speed the ball can take
     :param gravity: The world gravity
-    :param stuck: If True the environment depth will keep the initial dpeth during the whole training        
+    :param stuck: If True the environment depth will keep the initial depth during the whole training        
     """
 
     def __init__(self, update = True):
