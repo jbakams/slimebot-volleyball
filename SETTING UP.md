@@ -36,7 +36,15 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 
 [Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. You can refer to the [User Guide](https://cyberbotics.com/doc/guide/getting-started-with-webots) to have an overview on how it works. In this section we are explaining the important options regarding our projects.
 
-## 
+## Interface overview
+
+<p align="center">
+  <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref2.png"></img>
+</p>
+<p align="center">
+ Typical Webots interface
+</p>
+
 
 
 
