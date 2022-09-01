@@ -4,12 +4,11 @@ This section shows how to set up python in Webots R2021b using a virtual environ
 
 ## virtual environment
 
-You may need to install [anaconda](https://docs.anaconda.com/anaconda/install/) if you don't have it yet.
+Once [anaconda](https://docs.anaconda.com/anaconda/install/) is installed, open the command line and enter:
 Open the command line and 
 
 ```cmd
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+conda create -n webots python=3.7
+conda activate webots
 ```
 
