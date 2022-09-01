@@ -27,7 +27,7 @@ And any additional library one would like to use ([Tensorflow](https://www.tenso
 Open Webots. On the top right go to the follwoing options: *Tools>Preferences>*
 On the Preferences window in the *python command* line set the path the python of the virtual environment
 <p align="center">
-  <img width="55%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref1.png"></img>
+  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref1.png"></img>
 </p>
 
 
