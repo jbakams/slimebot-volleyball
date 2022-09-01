@@ -44,8 +44,7 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 <p align="center">
  Typical Webots interface
 </p>
-According to the number in the image above:
-
+According to the number in the image above:\
 
 1. 3D scene: Serves as a realtime visualizer of the virtual environment.
 2. Console: Webots has an built-in console that help to follow up progress of simulations.
