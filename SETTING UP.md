@@ -22,3 +22,13 @@ pip install opencv-python
 ```
 And any additional library one would like to use ([Tensorflow](https://www.tensorflow.org/install), [Pytorch](https://pytorch.org/get-started/locally/), etc.). The virtual environment can be managed regardless Webots.
 
+## python path in Webots R2021b
+
+Open Webots. On the top right go to the follwoing options: *Tools>Preferences>*
+
+
+
+
+
+
+
