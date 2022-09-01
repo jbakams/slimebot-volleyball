@@ -1,4 +1,4 @@
-# 3D-volleyball: 
+# slimebot-volleyball: 
 
 <p align="center">
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation.gif"></img>
