@@ -44,11 +44,8 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 <p align="center">
  Typical Webots interface
 </p>
-
-
-
-
-
-
-
-
+According to the number in the image above:
+1. 3D scene: Used to render simulations of objects
+2. Console: Webots has an built-in console that help to follow up simulations progress
+3. IDE: Webots has a built-in IDE that allows to type codes and scripts directly in Webots
+4. Scene Tree: The scene tree contain the list of all elements in the 3D scene and their specific attributes (color, physics, etc.) For this game we don't have to worry about it, except the need of customizing the default 3D scene.
