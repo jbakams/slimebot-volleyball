@@ -52,4 +52,17 @@ According to numbers in the image above:
 3. IDE: Webots has a built-in IDE that allows to type codes and scripts directly in Webots. It is possible to use an external IDE such Visual Studio or Pycharm using the following [guide](https://cyberbotics.com/doc/guide/using-your-ide) to run simulation outside of Webots. 
 4. Scene Tree: The scene tree contain the list of all elements in the 3D scene and their specific attributes (color, physics, etc.) For this game we don't have to worry about it, except the need of customizing the default 3D scene of the game.
 
+## Running a simulation
 
+There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the cursor on top of a button and a text message will appear to explain what is the button use for. Let give a briefing about some of them.
+
+1. Restore the simulation at the initial state. Click on it only if you need to restart a simulation (For examlple after fixing bugs) otherwise you may lose all progress so far.
+2. Execute simulation for only one timestep. May be helpful to check if everything is running accordingly in the 3D scene.
+3. Run the simulation in real-time. If you want to enjoy the simulation in real time than there is your button.
+4. Run the simulation as fast as possible. There is the button you need when training agents. The speed depends on the capicity of the used equipment.
+5. Hide or Show rendering. The rendering use graphic and may slow down a bit the simulation, even in the fast speed mode. You can hide the 3D scene by clicking on it to add more speed to the simulation.
+6. Record the simulation as a video to save locally in your device.
+
+The timeline pannel on the left of the show the running time of the simulation. you can pause the simulation and continue it later, as long as Webots doesn't shut down.
+
+## Create a new python controller
