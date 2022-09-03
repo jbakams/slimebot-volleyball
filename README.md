@@ -1,4 +1,4 @@
-# 3D-volleyball: 
+# slimebot-volleyball: 
 
 <p align="center">
   <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation.gif"></img>
@@ -19,13 +19,11 @@
 
 ## 1. Webots
 
-Webots is open soure and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/) and Install it from its official webesite. 
+Webots is open soure and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/) it from the official website and [Install](https://cyberbotics.com/doc/guide/installing-webots) it following the official guidline. We recommand the version R2021b to avoid compatibility bugs with more recent versions.
 
 ## 2. Python
 
-Defautly Webots use the system python. However, one would prefer a virtual env create via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
-
-(To be continued ....)
+Defautly Webots use the system python. However using a virtual env created via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) is more convinient. Though the environment is fine with anyt pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://cyberbotics.com/doc/guide/using-python) to set up python in R2021b.
 
 ## 3. Training of the single agent
 
