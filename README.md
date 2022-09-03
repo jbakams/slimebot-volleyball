@@ -1,18 +1,9 @@
 # slimebot-volleyball: 
 
-<p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/vid1.mkv"></img>
-</p>
-<p align="center">
-  <em>Self-play training of a PPO agent (both players are controlled by the same agent)</em>
-</p>
-
-
-
 https://user-images.githubusercontent.com/59349943/188281245-94e4bb73-8c14-49db-bc71-f44a0e3e4edf.mp4
-
-
-
+<p align="center">
+  <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
+</p>
 
 3D-volleyball it's a 3d versions of the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) using [Webots](https://cyberbotics.com/) for the visualization. We added a dimension in the slimevolleygym environment and kept the same settings to see if agents will still be able to learn to the game.
 
