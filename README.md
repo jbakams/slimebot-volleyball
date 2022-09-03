@@ -1,7 +1,7 @@
 # slimebot-volleyball: 
 
 <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation.gif"></img>
+  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/vid1.mkv"></img>
 </p>
 <p align="center">
   <em>Self-play training of a PPO agent (both players are controlled by the same agent)</em>
