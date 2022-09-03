@@ -1,7 +1,7 @@
 # slimebot-volleyball: 
-<p align="center">
+
 https://user-images.githubusercontent.com/59349943/188281517-03fc67dd-40da-4cf2-88af-7424d587861c.mp4
-</p>
+
 <p align="center">
   <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
 </p>
