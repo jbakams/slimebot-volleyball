@@ -56,6 +56,10 @@ According to numbers in the image above:
 
 There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the cursor on top of a button and a text message will appear to explain what is the button use for. Let give a briefing about some of them.
 
+<p align="center">
+  <img width="45%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref3.png"></img>
+</p>
+
 1. Restore the simulation at the initial state. Click on it only if you need to restart a simulation (For examlple after fixing bugs) otherwise you may lose all progress so far.
 2. Execute simulation for only one timestep. May be helpful to check if everything is running accordingly in the 3D scene.
 3. Run the simulation in real-time. If you want to enjoy the simulation in real time than there is your button.
