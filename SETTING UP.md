@@ -73,4 +73,7 @@ The timeline pannel on the left of the show the running time of the simulation. 
 
 To open a project in webots go on the top right a follow those options: *File>Open World*
 
-Then navigate into your device where the prject is saved and seek for the file: *world.wbt*. If you cloned this repository this should be the path to the world.wbt file: */home/usrname/slimebot-volleyball/slimebot-volleyball/worlds/world.wbt*
+Then navigate into your device where the prject is saved and seek for the file: *world.wbt*. If you cloned this repository this should be the path to the world.wbt file: 
+<p align="center">
+  */home/usrname/slimebot-volleyball/slimebot-volleyball/worlds/world.wbt*
+</p>
