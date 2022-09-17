@@ -34,6 +34,8 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 
 # 2. Webots
 
+This section is only if you are interested on running simulation in Webots. The game code can still be run outside of Webots, but the simulation and vizualization is noly set for Webots.
+
 [Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. You can refer to the [User Guide](https://cyberbotics.com/doc/guide/getting-started-with-webots) to have an overview on how it works. In this section we are explaining the important options regarding our projects.
 
 ## Interface overview
