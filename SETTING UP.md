@@ -97,8 +97,8 @@ Navigate to the controller section:
 
 *Select* pops up a window allowing to chose which controller to use. *Edit* will open the controller on the Internal IDE if one wants to edit it.
 They are predefine controllers in the project that one is free to test and ajust :
-1. RandomPlayer:  Using a random policy
-2. Evaluation: Evaluate the pretrained PPO
+1. randomPlayer:  Using a random policy
+2. evaluation: Evaluate the pretrained PPO
 3. self_trainig_ppo: A script that trains a stablebaselines PPO in a selfplay fashion
 
 Though the code can run independently from *Webots*, but we'll see now how to create a controller script that Webots can recognize for the simulation.
