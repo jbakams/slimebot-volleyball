@@ -76,3 +76,9 @@ To open a project in webots go on the top right a follow those options: *File>Op
 Then navigate into your device where the prject is saved and seek for the file: *world.wbt*. If you cloned this repository this should be the path to the world.wbt file: 
 
   */home/usrname/slimebot-volleyball/slimebot-volleyball/worlds/world.wbt*
+  
+ Once the project open, you can run the simulation. But should make sure to have the right controller script running.
+
+## Controllers
+
+A [controller](https://cyberbotics.com/doc/guide/controller-programming) in webots is a script in charge on controller dynamics of the simulation. They are two kind of controllers *robot-controller* and *supervisor-controller*. We are more interested in the supervisor for now. To train or evaluate an agent we need to define the script as a controller such that *Webots* will recognize it.
