@@ -1,10 +1,10 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.6488969888890057 -0.6749016777229462 -0.3513408931757503 3.7214952209316015
-  position 0.14267749089633922 5.009811841544769 6.383118044728319
+  orientation 0.9506902727131598 0.286212377368832 0.11945911605842087 5.45580147827962
+  position -0.8729294083145969 4.6441064516655395 4.18831194212833
   follow "solid:solid:solid"
   followType "None"
 }
@@ -167,7 +167,7 @@ DEF BLUE Robot {
   children [
     DEF CAM Solid {
       translation 0.05 0.15 0
-      rotation 1 0 0 -1.570795613280012
+      rotation 0 -1 0 1.5708
       children [
         Camera {
           fieldOfView 1
@@ -270,7 +270,7 @@ DEF YELLOW Robot {
   children [
     DEF CAM Solid {
       translation -0.05 0.15 0
-      rotation 1.326789589425184e-06 0.7071067811859252 0.7071067811859252 -3.1415853071795863
+      rotation 0 1 0 1.5708
       children [
         Camera {
           fieldOfView 1
@@ -382,7 +382,7 @@ DEF SCENE_CONTROL Robot {
 }
 DEF piste Solid {
   translation 0 0.001 0
-  rotation -1 0 0 1.5707963267948966
+  rotation 0 1 0 3.14159
   children [
     DEF PISTE Shape {
       appearance PBRAppearance {
@@ -398,7 +398,7 @@ DEF piste Solid {
 }
 DEF piste_2 Solid {
   translation -0.01 0 0
-  rotation -1 0 0 1.5707963267948966
+  rotation 0 1 0 3.14159
   children [
     Shape {
       appearance PBRAppearance {
@@ -458,7 +458,7 @@ DEF wall Solid {
 }
 DEF limitmark Solid {
   translation 0.784 0.002 0
-  rotation -1 0 0 1.5707963267948966
+  rotation 0 1 0 3.14159
   children [
     Shape {
       appearance PBRAppearance {
@@ -473,7 +473,7 @@ DEF limitmark Solid {
 }
 DEF limitmark Solid {
   translation -0.784 0.002 0
-  rotation -1 0 0 1.5707963267948966
+  rotation 0 1 0 3.14159
   children [
     Shape {
       appearance PBRAppearance {
