@@ -126,6 +126,6 @@ Give a name to your controller
 A new directory containing a python file with the same name will be created. Defaulty the new controller will be open in the text edito. Otherwise you can still select it on the controllers panels and click on *Edit*.
 
 <p align="center">
-  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller4.png"></img>
+  <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller4.png"></img>
 </p>
 
