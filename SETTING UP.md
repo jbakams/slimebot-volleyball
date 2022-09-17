@@ -69,4 +69,16 @@ There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the 
 
 The timeline pannel on the left of the show the running time of the simulation. you can pause the simulation and continue it later, as long as Webots doesn't shut down.
 
-## Create a new python controller
+## Open a project
+
+To open a project in webots go on the top right a follow those options: *File>Open World*
+
+Then navigate into your device where the prject is saved and seek for the file: *world.wbt*. If you cloned this repository this should be the path to the world.wbt file: 
+
+  */home/usrname/slimebot-volleyball/slimebot-volleyball/worlds/world.wbt*
+  
+ Once the project open, you can run the simulation. But should make sure to have the right controller script running.
+
+## Controllers
+
+A [controller](https://cyberbotics.com/doc/guide/controller-programming) in webots is a script in charge on controller dynamics of the simulation. They are two kind of controllers *robot-controller* and *supervisor-controller*. We are more interested in the supervisor for now. To train or evaluate an agent we need to define the script as a controller such that *Webots* will recognize it.
