@@ -69,4 +69,7 @@ There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the 
 
 The timeline pannel on the left of the show the running time of the simulation. you can pause the simulation and continue it later, as long as Webots doesn't shut down.
 
-## Create a new python controller
+## Opening a project
+
+To open a project in webots go on the top right a follow those options: *File>Open World*
+Then navigate into your device where the prject is saved and seek for the file *world.wbt*
