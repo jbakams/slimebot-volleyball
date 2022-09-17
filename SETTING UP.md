@@ -88,3 +88,11 @@ To use a controller: On the Scene Tree unroll the arrow right before *DEF SCENE_
 <p align="center">
   <img width="25%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/scenecontroller.png"></img>
 </p>
+
+Navigate to the controller section:
+
+<p align="center">
+  <img width="25%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/scenecontroller2.png"></img>
+</p>
+
+
