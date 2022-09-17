@@ -86,5 +86,5 @@ A [controller](https://cyberbotics.com/doc/guide/controller-programming) in webo
 To use a controller: On the Scene Tree unroll the arrow right before *DEF SCENE_CONTROL Robot*
 
 <p align="center">
-  <img width="45%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/scenecontroller.png"></img>
+  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/scenecontroller.png"></img>
 </p>
