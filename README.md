@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/59349943/188281632-5513d5a1-447d-4737-
 
 slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional axis which makes the training more challenging for RL agents such as PPO.
 
-The pretrain PPO in this repository was trained using the a curriculum Incremental Setting. See details in (link to provide)
+The pretrain PPO in this repository was trained using the curriculum Incremental Setting. See details in (link to provide)
 
 # Installation
 
