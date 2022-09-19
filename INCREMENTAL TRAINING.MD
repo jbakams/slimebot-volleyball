@@ -22,7 +22,7 @@ env = VolleyBotEnv()
 # training = True means during training the ball will always be launched on the learning, this speeds up the training time
 env.training = True 
 
-# update = True, means the environment will be incremented each time the performance threshold is reaching during evaluation
+# update = True, means the z axis will be incremented each time the performance threshold is reaching during evaluation
 env.update = True 
 
 # stuck = True, means no incrementation learning, the initial depth will stay fixed during the whole training
