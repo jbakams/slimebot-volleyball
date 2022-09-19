@@ -39,11 +39,9 @@ env.seed(SEED)
 
 We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
 
-In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) the two parameter to worry more are:
+In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) one of the main parameters to worry about is:
 ```python
 UPGR_LEN # The performance threshold in terms of mean episode legnth
 ```
 Once the average episode legnth during evaluation exceed *UPGR_LEN* the environment get wider according the following the predefine step.
-```python
-n_update # Fed to the function env.word.setup(), helps to compute the incremental step size of the z axis
-```
+
