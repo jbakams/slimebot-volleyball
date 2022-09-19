@@ -14,7 +14,7 @@ We decided to shift again by adding 4 units to the z axis (from z= 4 to z = 8) t
 
 ### The environment
 
-We jsut expalining the main attribute of the environment that help in the incremental setting.
+We are just expalining the main attribute of the environment that help in the incremental setting.
 
 ```python
 env = VolleyBotEnv()
@@ -35,7 +35,7 @@ env.world.setup( n_update = 4, init_depth = 8)
 env.seed(SEED)
 ```
 
-### training script
+### Training Script
 
 We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
 
@@ -44,4 +44,7 @@ In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/
 UPGR_LEN # The performance threshold in terms of mean episode legnth
 ```
 Once the average episode legnth during evaluation exceed *UPGR_LEN* the environment get wider according the following the predefine step.
+
+
+The success of the incremental of the training relay on those 3 parameters: init_depth, upgr_len and n_update.
 
