@@ -41,5 +41,9 @@ We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/bl
 
 In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) the two parameter to worry more are:
 ```python
-UPGR_LEN # The performance threshold in terms of mean episode legnth, in which we decided to make the environment wider
+UPGR_LEN # The performance threshold in terms of mean episode legnth
+```
+Once the average episode legnth during evaluation exceed *UPGR_LEN* the environment get wider according the following the predefine step.
+```python
+n_update # Fed to the function env.word.setup(), helps to compute the incremental step size of the z axis
 ```
