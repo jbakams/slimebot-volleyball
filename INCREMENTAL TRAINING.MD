@@ -1,6 +1,6 @@
-# Incremental Training
+# Self Play Incremental Training
 
-The following training method is a part of my research Master Project at Stellenbosch Unversity. Though the agent has camera, the training was made using state observation.
+The following training method is a part of my research MEng researh project. Though agents have camera, the training was made using state observations.
 
 ## Abstract
 
@@ -34,3 +34,13 @@ env.world.setup( n_update = 4, init_depth = 8)
                                               
 env.seed(SEED)
 ```
+
+### training script
+
+We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
+
+In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) the two parameter to worry more are:
+'''python
+UPGR_LEN = 1500 # Increase the depth if the reach this average episode lenght in evaluation
+
+'''
