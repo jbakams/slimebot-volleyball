@@ -1,16 +1,1 @@
-Logging to ppo2_selfplay
---------------------------------------
-| approxkl           | 0.0039035052  |
-| clipfrac           | 0.039489746   |
-| ep_len_mean        | 416           |
-| ep_reward_mean     | -5            |
-| explained_variance | 0.424         |
-| fps                | 427           |
-| n_updates          | 1             |
-| policy_entropy     | 3.4619286     |
-| policy_loss        | -0.0046102866 |
-| serial_timesteps   | 4096          |
-| time_elapsed       | 1.67e-05      |
-| total_timesteps    | 4096          |
-| value_loss         | 0.0415913     |
---------------------------------------
+Logging to ppo2_selfplay_715

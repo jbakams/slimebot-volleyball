@@ -410,6 +410,7 @@ class PPO2(ActorCriticRLModel):
                     logger.logkv('time_elapsed', t_start - t_first_start)
                     for (loss_val, loss_name) in zip(loss_vals, self.loss_names):
                         logger.logkv(loss_name, loss_val)
+                    logger.logkv("Environment depth: ", safe_mean([ep_info['EnvDepth'] for ep_info in self.ep_info_buf]))
                     logger.dumpkvs()
 
             callback.on_training_end()
@@ -499,7 +500,7 @@ class Runner(AbstractEnvRunner):
                     return [None] * 9
             
             if self.dones:
-                ep_infos.append({'r': infos[-1]['r'], 'l': infos[-1]['l']})
+                ep_infos.append({'r': infos[-1]['r'], 'l': infos[-1]['l'], 'EnvDepth': infos[-1]['EnvDepth']})
 
             for info in infos:
                 maybe_ep_info = info.get('episode')

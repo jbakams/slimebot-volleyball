@@ -1,6 +1,6 @@
 """
 This is game is built on top of the slimevolleygym game. The code has been adjusted to 
-make it work in a 3 coodrdinate setting and react with the simulator software Webots
+make it work in a 3 coodrdinates setting and react with the simulator software Webots
 
 Original game:
 https://github.com/hardmaru/slimevolleygym
@@ -20,7 +20,13 @@ import numpy as np
 import cv2 # installed with gym anyways
 from collections import deque
 from time import sleep
-from controller import Supervisor ## Webots class to control nodes in the 3D scene area
+
+# Avoid the code to crash if launched outside of Webots
+try:
+    from controller import Supervisor ## Webots class to control nodes in the 3D scene area
+    WEBOTS_MODE = True
+except:
+    WEBOTS_MODE = False    
 
 
 np.set_printoptions(threshold=20, precision=3, suppress=True, linewidth=200)
@@ -35,7 +41,8 @@ GRAVITY = -9.8*2*1.5
 MAXLIVES = 5 # game ends when one agent loses this many games
 
 ### Webots settings:
-supervisor = Supervisor()
+if WEBOTS_MODE:
+    supervisor = Supervisor()
 TIME_STEP = 32
 
 
@@ -157,10 +164,11 @@ class Particle:
         self.vz = vz 
         self.r = r     
          
-        # Webots settings         
-        self.particule = supervisor.getFromDef(name)
-        self.location = self.particule.getField("translation")
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        # Webots settings   
+        if WEBOTS_MODE:      
+            self.particule = supervisor.getFromDef(name)
+            self.location = self.particule.getField("translation")
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
     
     def move(self):
         """
@@ -172,7 +180,8 @@ class Particle:
         self.x += self.vx * TIMESTEP
         self.y += self.vy * TIMESTEP
         self.z += self.vz * TIMESTEP  
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        if WEBOTS_MODE:
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
     
     def applyAcceleration(self, ax, ay, az):
         """
@@ -216,8 +225,9 @@ class Particle:
         #If the particule hit the floor, prevent it from crossing the floor
         if (self.y<=(self.r)):
             self.vy *= -FRICTION
-            self.y = self.r+NUDGE*TIMESTEP         
-            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+            self.y = self.r+NUDGE*TIMESTEP 
+            if WEBOTS_MODE:        
+                self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
           
             if (self.x <= 0):
                 return -1 # The left player loses a life
@@ -237,8 +247,8 @@ class Particle:
         if ((self.x >= (-WORLD.wall_width/2-self.r)) and (self.prev_x < (-WORLD.wall_width/2-self.r)) and (self.y <= WORLD.wall_height)):
             self.vx *= -FRICTION
             self.x = -WORLD.wall_width/2-self.r-NUDGE*TIMESTEP
-          
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        if WEBOTS_MODE:   
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
                
         return 0;
     
@@ -284,8 +294,9 @@ class Particle:
         while(self.isColliding(p)):
           self.x += abx
           self.y += aby
-          self.z += abz          
-          self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+          self.z += abz    
+          if WEBOTS_MODE:      
+              self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
           
         ux = self.vx - p.vx
         uy = self.vy - p.vy
@@ -395,9 +406,10 @@ class Agent():
         self.life = MAXLIVES
         
         # Webots settings
-        self.agent = supervisor.getFromDef(name)
-        self.location = self.agent.getField("translation")
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        if WEBOTS_MODE:
+            self.agent = supervisor.getFromDef(name)
+            self.location = self.agent.getField("translation")
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
         
     def lives(self):
         """
@@ -448,15 +460,16 @@ class Agent():
         """
         self.x += self.vx * TIMESTEP
         self.y += self.vy * TIMESTEP
-        self.z += self.vz * TIMESTEP       
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        self.z += self.vz * TIMESTEP      
+        if WEBOTS_MODE: 
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
     
     def step(self):
         self.x += self.vx * TIMESTEP
         self.y += self.vy * TIMESTEP
         self.z += self.vz * TIMESTEP
-        
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+        if WEBOTS_MODE:
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
     
     def update(self):
         """
@@ -501,8 +514,9 @@ class Agent():
             if (self.z >= WORLD.wall_depth/2):
                 self.vz = 0;
                 self.z = WORLD.wall_depth/2
-             
-        self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
+                
+        if WEBOTS_MODE:     
+            self.location.setSFVec3f([self.x*0.1, self.y*0.1, self.z*0.1])
     
     def updateState(self, ball, opponent):
         """ 
@@ -778,13 +792,15 @@ class VolleyBotEnv(gym.Env):
         """
         
         #drawing agent names and lives on the top corners of Webots 3D views
-        self.draw_agent_name()
-        self.draw_lives(self.game.agent_left.life, self.game.agent_right.life)
-        self.draw_time(int((self.t_limit-self.t)/100))
-             
+        if WEBOTS_MODE:
+            self.draw_agent_name()
+            self.draw_lives(self.game.agent_left.life, self.game.agent_right.life)
+            self.draw_time(int((self.t_limit-self.t)/100))
+            supervisor.step(TIME_STEP)
+                 
         done = False
         self.t += 1
-        supervisor.step(TIME_STEP) ## Important for Webots world similations
+         ## Important for Webots world similations
         
         if self.otherAction is not None:
             otherAction = self.otherAction          
@@ -825,7 +841,8 @@ class VolleyBotEnv(gym.Env):
               'otherObs': otherObs,
               'state': self.game.agent_right.getObservation(),
               'otherState': self.game.agent_left.getObservation(),
-              'otherAction': otherAction  ## the opponent action
+              'otherAction': otherAction,  ## the opponent action
+              'EnvDepth': self.world.depth
                }
         info.update(epinfos)
                   
@@ -847,7 +864,8 @@ class VolleyBotEnv(gym.Env):
             self.world.setup()
 
     def reset(self):
-        self.draw_time(int(self.t_limit/100))
+        if WEBOTS_MODE:
+            self.draw_time(int(self.t_limit/100))
         self.init_game_state()
         return self.getObs()
    

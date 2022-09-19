@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.9506902727131598 0.286212377368832 0.11945911605842087 5.45580147827962
-  position -0.8729294083145969 4.6441064516655395 4.18831194212833
+  orientation 1 0 0 4.71238898038469
+  position 2.976640756996498e-16 7.000141251638755 -1.1807220594395796e-15
   follow "solid:solid:solid"
   followType "None"
 }
@@ -377,7 +377,7 @@ DEF BALL Solid {
   boundingObject USE Ball
 }
 DEF SCENE_CONTROL Robot {
-  controller "RandomPlayer"
+  controller "selfplay_training_ppo"
   supervisor TRUE
 }
 DEF piste Solid {
