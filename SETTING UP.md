@@ -34,6 +34,8 @@ Hence, we are all set. The virtual environment can be managed regardless of Webo
 
 # 2. Webots
 
+This section is only if you are interested on running simulation in Webots. The game code can still be run outside of Webots, but the simulation and vizualization is noly set for Webots.
+
 [Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. You can refer to the [User Guide](https://cyberbotics.com/doc/guide/getting-started-with-webots) to have an overview on how it works. In this section we are explaining the important options regarding our projects.
 
 ## Interface overview
@@ -102,4 +104,30 @@ They are predefine controllers in the project that one is free to test and ajust
 3. self_trainig_ppo: A script that trains a stablebaselines PPO in a selfplay fashion
 
 Though the code can run independently from *Webots*, but we'll see now how to create a controller script that Webots can recognize for the simulation.
+
+## Customized Controller
+
+To create a customized controller go on the top of *Webots* and click on the following options: *Wizards> New Robot Controller...*
+
+<p align="center">
+  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller.png"></img>
+</p>
+
+Click to next and select python as programming language
+
+<p align="center">
+  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller2.png"></img>
+</p>
+
+Give a name to your controller
+
+<p align="center">
+  <img width="35%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller3.png"></img>
+</p>
+
+Click on *Finish*. A new directory containing a python file with the same name will be created. Defaulty the new controller will be open in the text edito. Otherwise you can still select it on the controllers panels and click on *Edit*.
+
+<p align="center">
+  <img width="40%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/new_controller4.png"></img>
+</p>
 
