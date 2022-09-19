@@ -30,7 +30,7 @@ env.world.stuck = False
 
 # n_update precises the value of the step at each incrementation, step = 24/n_update
 # init_depth precises the value of the z axis at the initialization, it's not oblige to start with 0
-env.world.setup( n_update = 4, init_depth = 8) 
+env.world.setup( n_update = 6, init_depth = 4) 
                                               
 env.seed(SEED)
 ```
@@ -46,5 +46,5 @@ UPGR_LEN # The performance threshold in terms of mean episode legnth
 Once the average episode legnth during evaluation exceed *UPGR_LEN* the environment get wider according the following the predefine step.
 
 
-The success of the incremental of the training relay on those 3 parameters: init_depth, upgr_len and n_update.
+The success of the incremental of the training relay on those 3 parameters: *init_depth, upgr_len and n_update*.
 
