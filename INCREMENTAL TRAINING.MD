@@ -18,10 +18,19 @@ We jsut expalining the main attribute of the environment that help in the increm
 
 ```python
 env = VolleyBotEnv()
-env.training = True # if True during training the ball will always be launched on the learning, this speeds up the training time
-env.update = True # This mean the environment will be incremented once the performance threshold is reaching during evaluation
-env.world.stuck = False # if True no incrementation learning, the initial depth will stay fixed during the whole training
-env.world.setup( n_update = 4, init_depth = 8) # n_update precise the value of the step at each incrementation step = 24/n_update
-                                               # init_depth precise the value of the z axis at the initialization, it's not oblige to start with 0
+
+# if True during training the ball will always be launched on the learning, this speeds up the training time
+env.training = True 
+
+# update = True means the environment will be incremented once the performance threshold is reaching during evaluation
+env.update = True 
+
+# stuck = True  means no incrementation learning, the initial depth will stay fixed during the whole training
+env.world.stuck = False 
+
+# n_update precise the value of the step at each incrementation step = 24/n_update
+# init_depth precise the value of the z axis at the initialization, it's not oblige to start with 0
+env.world.setup( n_update = 4, init_depth = 8) 
+                                              
 env.seed(SEED)
 ```
