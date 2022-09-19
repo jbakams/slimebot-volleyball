@@ -18,6 +18,7 @@ of the learner.
 """
 
 import sys
+#append the main game directory path
 sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball")
 
 
@@ -25,26 +26,25 @@ import os
 import gym
 import numpy as np
 
-from ppo2 import PPO2
+from ppo2 import PPO2 # appending the customized stablebaselines ppo
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines import logger
 from helpers.callbacks import EvalCallback
-from helpers.runner import Runner
 import pandas as pd
-
 from shutil import copyfile # keep track of generations
 
 
 from environments.volleybot import VolleyBotEnv
 # Settings
-SEED = 715
+SEED = 715 # Try different seed 
 NUM_TIMESTEPS = int(1e9)
 EVAL_FREQ = int(1e5)
 EVAL_EPISODES = int(3e1)
 BEST_THRESHOLD = 0.5 # must achieve a mean score above this to replace prev best self
-UPGR_LEN = 1500
-BEST_LEN = 1000
-LOGDIR = "ppo2_selfplay"
+UPGR_LEN = 1500 # Increase the depth if the reach this average episode lenght in evaluation
+BEST_LEN = 1500
+
+LOGDIR = "ppo2_selfplay_"+str(SEED)
 
 
 
@@ -52,7 +52,7 @@ class VolleyBotSelfPlayEnv(VolleyBotEnv):
     # wrapper over the normal single player env, but loads the best self play model
     def __init__(self, realSelf = False):
         super(VolleyBotSelfPlayEnv, self).__init__()
-        self.realSelf = realSelf
+        self.realSelf = realSelf # tells if the opponent will be the real time version of the trainer
         if not self.realSelf:       
             self.policy = self
         self.best_model = None
@@ -157,24 +157,6 @@ class SelfPlayCallback(EvalCallback):
         
             data.to_csv(LOGDIR + '/env.csv', index = False)
                                       
-
-def rollout(env, policy):
-    """ play one agent vs the other in modified gym-style loop. """
-    obs = env.reset()
-
-    done = False
-    total_reward = 0
-
-    while not done:
-
-        action, _states = policy.predict(obs)
-        obs, reward, done, _ = env.step(action)
-        total_reward += reward
-    
-        if RENDER_MODE:
-              env.render()
-
-    return total_reward
   
 class Baseline:
     def __init__(self, policy):
@@ -214,9 +196,7 @@ def train():
     #env.policy = Baseline(model)
   
     model.learn(total_timesteps=NUM_TIMESTEPS, callback=eval_callback)
-
-    model.save(os.path.join(LOGDIR, "final_model")) # probably never get to this point.
-
+    model.save(os.path.join(LOGDIR, "final_model"))
     env.close()
 
 if __name__=="__main__":

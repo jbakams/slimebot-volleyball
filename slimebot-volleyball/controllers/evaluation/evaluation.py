@@ -20,7 +20,7 @@ import pandas as pd
 from shutil import copyfile # keep track of generations
 from environments.volleybot import VolleyBotEnv
 
-SEED = 7542
+SEED = 713
 LOGDIR = "/controllers/selfplay_training_ppo/ppo2_selfplay"
 
 def rollout(env, policy1, policy2 = None):
@@ -67,7 +67,9 @@ def evaluate():
     
 
     env = VolleyBotEnv()    
-    env.world.setup(init_depth = 24)
+    env.world.stuck = True
+    env.update = True  
+    env.world.setup(n_update = 6, init_depth = 24)
     env.seed(SEED)
   
 
