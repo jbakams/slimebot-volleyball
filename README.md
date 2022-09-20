@@ -59,34 +59,25 @@ We realized that by starting in a low level of sparsity and incrementing it prog
 
 ## 4. Coming next
 
-### 4.2. Using Webots built-in sensors
+### 4.1. Using Webots built-in sensors
 
-The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensor such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
+The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensors such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
 - Camera: We would like to use the Webots camera to allow agent to use pixels and see if it can train in both single and teamplay environments.
 - Distance sensor: We would like also to see if the built-in distance sensor my be helpul to train the agent as it can detect objects by distance.
 - Combine sensors: Human don't use only one sens when performing tasks. A player can react in what he sees and hears from it teammates. We would like to see how to combine different sensors inputs for an optimal training.
 
 ### 4.1. Team play
+https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-b275-25181bca6d59.mp4
 
 <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/team.png"></img>
-  </p>
-  <p align="center">
-  <em>Team play volleyball</em>
-  </p>
+  <em>Collaborative selfplay training in 2D fashion</em>
+</p>
 
-We are setup up a multi-agent team play environment to run some basic experiments such as:
-
-- The whole team managed by the same neural network;
-- Each teammate will be an independent NN
-- See the possibility of running Multi-Agent RL algorithms: QMix, MAD4PG, etc.
-- See if a NN trained in a single environment can learn to collaborate in team-play environment
-- And all other ideas that will pop up in our minds
+Team not yet trained in 3D
 
 
-
-## Conclusion
+## Cocnlusion
 
 This is a lot of statements and questions to answers. Not sure everything will be done in a Master! But let see how far we'll go with the avialable time.
 
