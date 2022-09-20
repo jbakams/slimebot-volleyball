@@ -5,7 +5,8 @@
 
 The *tabula rasa* failed in training the RL agent in the 3D envirnment. We try to train the agent from scratch in the 3D environment but the agent didn't show any progress at all after more than 20M timesteps. As the agent is able to train in the 2D version, we explored the ability of training it using a curriculum incremental fashion from 2D to 3D which worked hopefully.
 
-https://user-images.githubusercontent.com/59349943/191241303-d42c3e85-d976-484e-b3ba-2265aa5530c2.mp4
+https://user-images.githubusercontent.com/59349943/191252794-0a18fbee-15ed-49fb-9d7b-c1c50f2d4ea8.mp4
+
 <p align="center">
   <em>Top view of the incremental learning process</em>
 </p>
