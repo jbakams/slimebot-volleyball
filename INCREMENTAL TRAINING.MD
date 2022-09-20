@@ -29,9 +29,8 @@ Defines the number of time the z axis will be incremented during the training if
 ```
 Precises the value of the z axis at the initialization. Though we recommand a value of 0 to motivate early training, it can also be greater than 0. The maximum initial value we tried that the agent was able to train is 8.
 
-### The environment setup
-
-We are just expalining the main attribute of the environment that help in the incremental setting.
+### Environment Setup
+An overview of the environment preset before the taining.
 
 ```python
 env = VolleyBotSelfPlayEnv()
@@ -51,8 +50,12 @@ env.world.setup( n_update = 6, init_depth = 4)
                                               
 env.seed(SEED)
 ```
+1. training: If True the ball will always be launched on the side of the learner, if False the ball will be launch randomnly on both directions
+2. update: If True the model will be training in a incremental fashion, if False no incrementation training, the model will be train in the full 3D space.
+3. stuck: If True the initial depth will stay static during the whole training. It's defaulty to False.
+4. world.setup( n_update = 6, init_depth = 4) : setting up the environment structure before the taining.
 
-### Training Script
+## Trained Models
 
 We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
 
