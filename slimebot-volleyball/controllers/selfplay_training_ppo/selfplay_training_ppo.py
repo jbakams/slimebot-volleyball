@@ -44,7 +44,7 @@ BEST_THRESHOLD = 0.5 # must achieve a mean score above this to replace prev best
 UPGR_LEN = 1500 # Increase the depth if the reach this average episode lenght in evaluation
 BEST_LEN = 1500
 
-LOGDIR = "ppo2_selfplay_"+str(SEED)
+LOGDIR = "ppo2_selfplay"
 
 
 
