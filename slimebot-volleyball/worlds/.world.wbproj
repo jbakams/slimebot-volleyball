@@ -5,7 +5,7 @@ sceneTreePerspectives: 000000ff0000000100000002000000c0000000fa01000000020100000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 0 "controllers/selfplay_training_ppo/selfplay_training_ppo.py" "controllers/selfplay_training_ppo/ppo2.py" "environments/volleybot.py" "controllers/evaluation/evaluation.py"
+textFiles: 3 "controllers/selfplay_training_ppo/selfplay_training_ppo.py" "controllers/selfplay_training_ppo/ppo2.py" "environments/volleybot.py" "controllers/evaluation/evaluation.py"
 consoles: Console:All:All
 renderingDevicePerspectives: solid(1):camera;1;1.40625;0.858614;0.801724
-renderingDevicePerspectives: solid:camera;1;1.45313;0;0.795259
+renderingDevicePerspectives: solid:camera;1;1.45313;0;0.795258
