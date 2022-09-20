@@ -44,7 +44,7 @@ Though peforming well, the pretrain agent didn't reach the same perfection in 3D
 The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensors such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
 - Camera: A camera placed on the bot can allow agent to use pixels as observation based on its personal view of the 3D environment.
-- Distance sensor: The built-in distance sensor my be used as for generate observations as the agent can detect objects by distance.
+- Distance sensor: The built-in distance sensor may be used to generate observations as the agent can detect objects by distance.
 - Combine sensors: Refering on Human abilities of using different sens at the same time. Combining different sensors can bring better training or in the worse case brings confusion to the agent during training.
 
 #### Collaborative Team play
