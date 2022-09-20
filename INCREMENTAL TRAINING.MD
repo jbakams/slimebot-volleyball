@@ -22,8 +22,13 @@ Waiting for the agent to reach the optimal policy before adding more difficulty 
 ```python
 n_update # parameter fed to the function setup() of the WORLD class
 ```
-Defines the number of time the environment z axis will be incremented during the training if initially z = 0. It helps to compute the *incremetation step* = 24/ n_update. For example if n_update = 6, step  = 24/6 = 4. This mean every time the threshold performance is reached the z axis will be increased by 4 units.
+Defines the number of time the z axis will be incremented during the training if initially z = 0. It helps to compute the *incremetatal step* = 24/ n_update. For example if n_update = 6, step  = 4. This means every time the threshold performance is reached the z axis will be increased by 4 units. Note that if the initial depth is greater than 0 the number of incrementations may be less than *n_update*.
 
+
+```python
+ init_depth # parameter fed to the function setup() of the WORLD class
+```
+Precises the value of the z axis at the initialization. Though we recommand a value of 0 to motivate early training, it can also be greater than 0. The maximum initial value we tried that the agent was able to train is 8.
 
 ### The environment setup
 
