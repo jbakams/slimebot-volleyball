@@ -39,7 +39,7 @@ Though peforming well, the pretrain agent didn't reach the same perfection in 3D
 
 ## 4. Challenges
 
-### 4.1. Webots built-in sensors
+### 4.2. Webots built-in sensors
 
 The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensors such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
