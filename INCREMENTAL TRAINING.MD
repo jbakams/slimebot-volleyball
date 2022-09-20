@@ -49,7 +49,9 @@ env.seed(SEED)
 <p align="center">
   <img width="75%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/incremental.png"></img>
 </p>
-
+<p align="center">
+  Illustration of incremental learning.  We can notice that the performance drop down after each incrementation, but the agent was able to adapt everytime.
+</p>
 ## Trained Model
 
 We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2) as the training model. But the environment is totally independent of the training algorithm and framework as long as *gym* is installed. You can use Stablebaselines [PPO1](https://github.com/hill-a/stable-baselines/tree/master/stable_baselines/ppo1) or Stablebaselines3 [PPO](https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/ppo/ppo.py) as well or any other RL or Non RL methods.
