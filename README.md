@@ -23,7 +23,7 @@ Defautly Webots use the operating system python. However using a virtual environ
 
 ### The Environment
 
-Though Webots has built-in physics system, we used the same physics has with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run launch the environment without Webots for training speeds for example.
+Though Webots has built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run the environment without Webots for training speeds for example.
 
 - The objects in the 3D scene was created with [Blender](https://www.blender.org/) (for flexibility) and imported in Webots.
 - Observation_Space: Though agents have camera showing how the view the environment and the opponent, the taining uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed x,y,z coordinates of the ball, the opponent and itself. Which gives a total of 18 for observation parameters.
