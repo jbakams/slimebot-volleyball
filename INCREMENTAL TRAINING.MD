@@ -1,4 +1,4 @@
-*The following scipts is a part of my MEng research project. Feel free to contact me for more details.*
+*The following script is a part of my MEng research project. Feel free to contact me for more details.*
 
 # Self Play Incremental Training
 
