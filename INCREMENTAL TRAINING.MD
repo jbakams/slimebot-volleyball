@@ -12,7 +12,20 @@ We decided to shift again by adding 4 units to the z axis (from z= 4 to z = 8) t
 
 ## Scripts
 
-### The environment
+n the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) there are 3 main attributes that make the incremental training a success:
+
+```python
+UPGR_LEN  # The performance threshold in terms of mean episode legnth
+```
+Waiting for the agent to reach the optimal policy before adding more difficulty is time consuming. We set a threshold performance value such that if the agent reaches that threshold we can move it in a upper level of difficulty. We used the average time it lasts in the game as the performance indicator. One would prefer to use the reward as a performance indicator.
+
+```python
+n_update # parameter fed to the function setup() of the WORLD class
+```
+Defines the number of time the environment z axis will be incremented during the training if initially z = 0. It helps to compute the *incremetation step* = 24/ n_update. For example if n_update = 6, step  = 24/6 = 4. This mean every time the threshold performance is reached the z axis will be increased by 4 units.
+
+
+### The environment setup
 
 We are just expalining the main attribute of the environment that help in the incremental setting.
 
@@ -22,8 +35,8 @@ env = VolleyBotSelfPlayEnv()
 # training = True means during training the ball will always be launched on the learning, this speeds up the training time
 env.training = True 
 
-# update = True, means the z axis will be incremented each time the performance threshold is reaching during evaluation
-env.update = True 
+# update = True, means the z axis will be incremented each time the performance threshold is reached during evaluation
+env.update = True # Defautly to False, if True the z axis will be incremented each time the performance threshold is
 
 # stuck = True, means no incrementation learning, the initial depth will stay fixed during the whole training
 env.world.stuck = False 
