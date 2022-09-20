@@ -5,6 +5,8 @@
 
 The *tabula rasa* failed in training the RL agent in the 3D envirnment. We try to train the agent from scratch in the 3D environment but the agent didn't show any progress at all after more than 20M timesteps. As the agent is able to train in the 2D version, we explored the ability of training it using a curriculum incremental fashion from 2D to 3D which worked hopefully.
 
+https://user-images.githubusercontent.com/59349943/191241303-d42c3e85-d976-484e-b3ba-2265aa5530c2.mp4
+
 ## Key Elements
 
 In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) there are 3 main attributes that make the incremental training a success:
