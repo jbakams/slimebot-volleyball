@@ -19,7 +19,16 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 ### 2. Python:
 
-Defautly Webots use the operating system python. However using a virtual environment is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, you use the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) to easily set up python in Webots R2021b.
+Defautly Webots use the operating system python. However using a virtual environment is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) explain how to easily set up python in Webots R2021b.
+
+### The Environment
+
+Though Webots has built-in physics system, we used the same physics has with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run launch the environment without Webots for training speeds for example.
+
+- The objects in the 3D scene was created with [Blender](https://www.blender.org/) (for flexibility) and imported in Webots.
+- Observation_Space: Though agents have camera showing how the view the environment and the opponent, the taining uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed x,y,z coordinates of the ball, the opponent and itself. Which gives a total of 18 for observation parameters.
+- Action_space: The basic actions taken by the agent are: left, right, up, forward, backward  and stay still. 3 actions maximum can be combined which  gives a total of 18 possible actions.
+- The environment is dynamic in the z axis, it can take any value between 0 and 24. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
 ## 3. Training of the single agent
 
