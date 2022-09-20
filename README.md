@@ -1,26 +1,25 @@
 # slimebot-volleyball: 
 
-
-
-
 https://user-images.githubusercontent.com/59349943/188281632-5513d5a1-447d-4737-9fc8-089ef29249ef.mp4
 <p align="center">
   <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
 </p>
 
-slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional axis which makes the training more challenging for RL agents such as PPO.
+slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional z-axis which makes the training more challenging for RL agents such as PPO.
 
-The pretrain PPO in this repository was trained using the curriculum Incremental Setting. See details in (link to provide)
+The pretrain PPO in this repository was trained with an Incremental Setting. See details in this [page](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD)
 
-# Installation
+## Presets
 
-## 1. Webots
+In our knowledge just few dependencies are required to run this environment:
+
+1. Webots:
 
 Webots is open soure and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/) it from the official website and [Install](https://cyberbotics.com/doc/guide/installing-webots) it following the official guidline. We recommand the version R2021b to avoid compatibility bugs with more recent versions.
 
-## 2. Python
+2. Python:
 
-Defautly Webots use the system python. However using a virtual env created via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) is more convinient. Though the environment is fine with anyt pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://cyberbotics.com/doc/guide/using-python) to set up python in R2021b.
+Defautly Webots use the operating system python. However using a virtual env created via [venv](https://docs.python.org/3/library/venv.html) or [anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://cyberbotics.com/doc/guide/using-python) to set up python in R2021b.
 
 ## 3. Training of the single agent
 
