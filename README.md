@@ -58,7 +58,7 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
 
 ## Citing the project
 ```latex
-@misc{slimebot volleyball: A multi-agents 3D gym environment for slime volleyball ,
+@misc{slimebot volleyball: A multi-agents 3D gym environment for slime volleyball,
   author = {Bakambana, Jeremie},
   title = {Slimebot Volleyball},
   year = {2022},
