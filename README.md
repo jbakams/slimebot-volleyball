@@ -19,7 +19,7 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 ### 2. Python:
 
-Defautly Webots use the operating system python. However using a virtual environment is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, you use the following [steps]([https://cyberbotics.com/doc/guide/using-python](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) to easily set up python in Webots R2021b.
+Defautly Webots use the operating system python. However using a virtual environment is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, you use the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) to easily set up python in Webots R2021b.
 
 ## 3. Training of the single agent
 
