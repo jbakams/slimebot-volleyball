@@ -1,4 +1,5 @@
-*The following script is a part of my MEng research project. Feel free to contact me for more details.*
+#### Note:
+*The following script is a part of my MEng research project which investigates on the ability of incremental Reinforcement Learning in a Collaborative Multi-Agents setting. Feel free to contact me for more details.*
 
 # Self Play Incremental Training
 
