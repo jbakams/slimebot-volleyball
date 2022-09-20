@@ -21,27 +21,20 @@ Webots is open soure and multi-platform software used to simulate robots. It is 
 
 Defautly Webots use the operating system python. However using a virtual environment is more convinient. Though the environment is fine with any pyhton 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) explain how to easily set up python in Webots R2021b.
 
-### The Environment
+## The Environment
 
-Though Webots has built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run the environment without Webots for training speeds for example.
+Though Webots has built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run the environment without Webots for training speeds for example. The trainer is the yellow player and the blue player is the opoponent.
 
 - Observation_Space: Though agents have cameras showing their respective views of the environment and the opponent, the training uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed xyz-coordinates of the ball, the opponent and itself. Which gives a total of 18 inputs for the obsevation.
 - Action_space: The basic actions taken by the agent are: *left, right, up, forward, backward  and stay still*. 3 actions maximum can be combined which  gives a total of 18 possible actions.
 - The environment can be be dynamic in the *z-axis*, it can take initially any value between 0 and 24 and can change during the training. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 - The objects in the 3D scene was created with [Blender](https://www.blender.org/) (for flexibility) and imported in Webots.
 
-## 3. Training of the single agent
+## 3. Training Overview
 
-The image above shows the traing of a  [OpenAi baselines PPO](https://github.com/openai/baselines/tree/master/baselines/ppo1) agent using state observation which includes: location and speed xyz-coordinates of the ball, the opponent and itself (18 input size). The same neural network is playing both sides but uses the experience of the yellow player to update its policy.
+For now we have able to train a PPO to play the game using self-play and Incremental learnings. Depending on the initialization, the agent can start palying in the full 3D space and last the maximum episode legnth before 10 Million timesteps of training. see the [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) and this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
-We were launching the ball on the side of the trainer (yellow player) but after 10 M timesteps no imporvement has been shown. The reason is that, as the ball is always launched in randomly in the 3 axes the ball was practically not hitting the agent to make it understanding how good it is to hit the ball.
-
-<p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_2.gif"></img>
-</p>
-<p align="center">
-  <em>Training the agent with the full depth at the beggining (Notice the ball is always launched on the side of the learner)</em>
-</p>
+Though peforming well, the pretrain agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion](link) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](link).
 
 ### 3.1. Incrementing sparsity of the training environement
 
@@ -62,14 +55,7 @@ We realized that by starting in a low level of sparsity and incrementing it prog
   - We repeated the same rule of upgration of the depth until the agent will start playting on the maximum depth of the scene meaning 24 units.
   - Depending on the initialization of the Neural Network, in one of the experiment the agent was able to play almost perfectly the game in more or less 10 millions timesteps (sometimes it needs above 20 M timesteps)
 
-### 3.2. Problem to solve
 
-After this experiment some questions is left to us to investigate in. As we noticed that the 3d version is training by a low level of complexity of the state environment. What is the better way to upgrade the environment when the agent starts to play correctly the game:
-
--  Start with a depth of zero  and increment the depth gradually;
--  Start with a small non zero depth and increment the depth gradually;
--  After the initial depth, should we go to short incrematation or we can directly jump to the maximum depth
--  How to explain that scientifically
 
 ## 4. The Main Goals
 
