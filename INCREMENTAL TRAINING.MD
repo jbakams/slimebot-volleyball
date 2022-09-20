@@ -2,7 +2,7 @@
 
 # Self Play Incremental Training
 
-The *tabula rasa* failed in training the RL agent in the 3D envirnment. We try to train the agent from scratch in the 3D environment but the agent didn't show any progress at all after more than 20M timesteps. As the agent is able to train in the 2D version, we explored the ability of training it using a curriculum incremental fashion from 2D to 3D which hopefully worked.
+The *tabula rasa* failed in training the RL agent in the 3D envirnment. We try to train the agent from scratch in the 3D environment but the agent didn't show any progress at all after more than 20M timesteps. As the agent is able to train in the 2D version, we explored the ability of training it using a curriculum incremental fashion from 2D to 3D which worked hopefully.
 
 ## Key Elements
 
