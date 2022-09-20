@@ -57,7 +57,15 @@ We realized that by starting in a low level of sparsity and incrementing it prog
 
 
 
-## 4. The Main Goals
+## 4. Coming next
+
+### 4.2. Using Webots built-in sensors
+
+The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensor such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
+
+- Camera: We would like to use the Webots camera to allow agent to use pixels and see if it can train in both single and teamplay environments.
+- Distance sensor: We would like also to see if the built-in distance sensor my be helpul to train the agent as it can detect objects by distance.
+- Combine sensors: Human don't use only one sens when performing tasks. A player can react in what he sees and hears from it teammates. We would like to see how to combine different sensors inputs for an optimal training.
 
 ### 4.1. Team play
 
@@ -76,13 +84,7 @@ We are setup up a multi-agent team play environment to run some basic experiment
 - See if a NN trained in a single environment can learn to collaborate in team-play environment
 - And all other ideas that will pop up in our minds
 
-### 4.2. Using Webots built-in sensors
 
-The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensor such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
-
-- Camera: We would like to use the Webots camera to allow agent to use pixels and see if it can train in both single and teamplay environments.
-- Distance sensor: We would like also to see if the built-in distance sensor my be helpul to train the agent as it can detect objects by distance.
-- Combine sensors: Human don't use only one sens when performing tasks. A player can react in what he sees and hears from it teammates. We would like to see how to combine different sensors inputs for an optimal training.
 
 ## Conclusion
 
