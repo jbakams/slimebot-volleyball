@@ -50,7 +50,7 @@ env.seed(SEED)
   <img width="75%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/incremental.png"></img>
 </p>
 <p align="center">
-  Illustration of incremental learning.  We can notice that the performance drop down after each incrementation, but the agent was able to adapt everytime.
+  <em>Illustration of incremental learning.  We can notice that the performance drop down after each incrementation, but the agent was able to adapt everytime.</em>
 </p>
 ## Trained Model
 
