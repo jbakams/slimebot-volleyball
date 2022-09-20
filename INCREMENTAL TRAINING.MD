@@ -40,13 +40,12 @@ env.world.stuck = False # Defautly to False
 env.world.setup( n_update = 6, init_depth = 4)                                               
 env.seed(SEED)
 ```
-1. *training*: If True the ball will always be launched on the side of the learner, if False the ball will be launch randomnly on both directions
+1. *training*: If True the ball will always be launched on the side of the learner, if False the ball will be launch randomnly on both directions. Setting it to True speeds up the training time.
 2. *update*: If True the model will be training in a incremental fashion, if False no incrementation training, the model will be train in the full 3D space.
 3. *stuck*: If True the initial depth will stay static during the whole training. It's defaulty to False.
 4. *world.setup( n_update = 6, init_depth = 4)* : setting up the environment structure before the taining.
 
 ## Trained Models
 
-We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
-
+We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2) as the training model. But the environment is totally independent of the training algorithm and framework as long as *gym* is installed. You can use Stablebaselines [PPO1](https://github.com/hill-a/stable-baselines/tree/master/stable_baselines/ppo1) or Stablebaselines3 [PPO](https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/ppo/ppo.py) as well.
 
