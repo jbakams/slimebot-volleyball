@@ -57,17 +57,17 @@ We realized that by starting in a low level of sparsity and incrementing it prog
 
 
 
-## 4. Coming next
+## 4. Challenges
 
-### 4.1. Using Webots built-in sensors
+### 4.1. Webots built-in sensors
 
 The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensors such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
-- Camera: We would like to use the Webots camera to allow agent to use pixels and see if it can train in both single and teamplay environments.
-- Distance sensor: We would like also to see if the built-in distance sensor my be helpul to train the agent as it can detect objects by distance.
-- Combine sensors: Human don't use only one sens when performing tasks. A player can react in what he sees and hears from it teammates. We would like to see how to combine different sensors inputs for an optimal training.
+- Camera: A camera placed on the bot can allow agent to use pixels as observation based on its personal view of the 3D environment.
+- Distance sensor: The built-in distance sensor my be used as for generate observations as the agent can detect objects by distance.
+- Combine sensors: Refering on Human abilities of using different sens at the same time. Combining different sensors can bring better training or in the worse case brings confusion to the agent during training.
 
-### 4.1. Team play
+### 4.1. Collaborative Team play
 Team not yet successful trained in 3D
 
 https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-b275-25181bca6d59.mp4
@@ -78,7 +78,10 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
 
 ## Cocnlusion
 
-This is a lot of statements and questions to answers. Not sure everything will be done in a Master! But let see how far we'll go with the avialable time.
+The code might miss some elegance in its structure and syntaxe. Any contribution to improve the the project is welcome. Found another training methods than the Incremental Learning? We can still add it here.
+
+## References
+
 
 
 
