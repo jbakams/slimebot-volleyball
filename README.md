@@ -30,16 +30,16 @@ Though Webots has built-in physics system, we used the same physics as with the 
 - The environment can be be dynamic in the *z-axis*, it can take initially any value between 0 and 24 and can change during the training. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 - The objects in the 3D scene was created with [Blender](https://www.blender.org/) (for flexibility) and imported in Webots.
 
-## 3. Training Overview
+## Training Overview
 
 For now we have able to train a PPO to play the game using self-play and Incremental learnings. Depending on the initialization, the agent can start palying in the full 3D space and last the maximum episode legnth before 10 Million timesteps of training. see the [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) and this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
 Though peforming well, the pretrain agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion](link) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](link).
 
 
-## 4. Challenges
+## Challenges
 
-### 4.2. Webots built-in sensors
+### Webots built-in sensors
 
 The use of state observation shows weakness in the input dimension when we need to move an agent trained in a single enviromment to an team play environment (which will increase the observation size). This is why using sensors such as Camera would be a better approach. The input dimension will never change at any environment the agent would  be placed.
 
@@ -47,7 +47,7 @@ The use of state observation shows weakness in the input dimension when we need 
 - Distance sensor: The built-in distance sensor my be used as for generate observations as the agent can detect objects by distance.
 - Combine sensors: Refering on Human abilities of using different sens at the same time. Combining different sensors can bring better training or in the worse case brings confusion to the agent during training.
 
-### 4.1. Collaborative Team play
+### Collaborative Team play
 Team not yet successful trained in 3D
 
 https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-b275-25181bca6d59.mp4
