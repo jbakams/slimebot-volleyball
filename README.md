@@ -57,7 +57,7 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
 </p>
 
 ## Citing the project
-
+```latex
 @misc{slimebot volleyball,
   author = {Bakambana, Jeremie},
   title = {Slimebot Volleyball},
@@ -66,7 +66,7 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/jbakambana/slimebot-volleyball}},
 }
-
+```
 ## Conclusion
 
 The code might miss some elegance in its structure and syntaxe. Any contribution to improve the the project is welcome. Found another training methods than the Incremental Learning? We can still add it here.
