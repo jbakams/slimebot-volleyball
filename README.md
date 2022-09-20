@@ -68,14 +68,13 @@ The use of state observation shows weakness in the input dimension when we need 
 - Combine sensors: Human don't use only one sens when performing tasks. A player can react in what he sees and hears from it teammates. We would like to see how to combine different sensors inputs for an optimal training.
 
 ### 4.1. Team play
+Team not yet successful trained in 3D
+
 https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-b275-25181bca6d59.mp4
 
 <p align="center">
-  <em>Collaborative selfplay training in 2D fashion</em>
+  <em>Collaborative selfplay training of 2 PPO in 2D fashion</em>
 </p>
-
-Team not yet trained in 3D
-
 
 ## Cocnlusion
 
