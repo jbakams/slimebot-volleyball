@@ -21,7 +21,7 @@ from shutil import copyfile # keep track of generations
 from environments.volleybot import VolleyBotEnv
 
 SEED = 713
-LOGDIR = "/controllers/selfplay_training_ppo/ppo2_selfplay"
+LOGDIR = "/controllers/trained_models/ppo2_selfplay"
 
 def rollout(env, policy1, policy2 = None):
     """ play one agent vs the other in modified gym-style loop. """
