@@ -4,7 +4,7 @@ https://user-images.githubusercontent.com/59349943/188281632-5513d5a1-447d-4737-
 <p align="center">
   <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
 </p>
-
+--
 slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional z-axis which makes the training more challenging for RL agents such as PPO.
 
 The pre-trained PPO in this repository was trained with an Incremental Setting. See details in this [page](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD)
