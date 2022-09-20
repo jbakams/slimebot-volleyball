@@ -10,7 +10,7 @@ We shifted the trained agent in the 2D fashion in the full 3D environment (from 
 We shifted the trained agent in 2D to a tiny 3D envirnment (from z = 0 to z = 4) and notice that after losing performance a bit the agent was able to adapt and training in the reduced 3D dimension. 
 We decided to shift again by adding 4 units to the z axis (from z= 4 to z = 8) the agent was still adapting. We continued the process untill the full depth (z = 24) and the agent was finally able to play in the full game space and able to last the maximim number of timesteps of an episode. Hence the incremental fashion that made a PPO agent to solve a 3D versio of the slime volley game.
 
-## Scripts
+### Key Elements
 
 In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) there are 3 main attributes that make the incremental training a success:
 #### Incrementation Threshold
@@ -18,12 +18,12 @@ In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/
 UPGR_LEN  # The performance threshold in terms of mean episode legnth
 ```
 Waiting for the agent to reach the optimal policy before adding more difficulty is time consuming. We set a threshold performance value such that if the agent reaches that threshold we can move it in a upper level of difficulty. We used the average time it lasts in the game as the performance indicator. One would prefer to use the reward as a performance indicator.
-#### Incrementation step size
+#### Incrementation Step Size
 ```python
 n_update # parameter fed to the function setup() of the WORLD class
 ```
 Defines the number of time the z axis will be incremented during the training if initially z = 0. It helps to compute the *incremetatal step* = 24/ n_update. For example if n_update = 6, step  = 4. This means every time the threshold performance is reached the z axis will be increased by 4 units. Note that if the initial depth is greater than 0 the number of incrementations may be less than *n_update*.
-#### Training initial depth
+#### Training Initial Depth (Z axis)
 ```python
  init_depth # parameter fed to the function setup() of the WORLD class
 ```
@@ -56,12 +56,4 @@ env.seed(SEED)
 
 We used the stablebaselines [PPO2](https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/ppo2/ppo2.py) to train but the environment is independent of the training algorithm and framework. Stablebaselines3 can work as well with the script.
 
-In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) one of the main parameters to worry about is:
-```python
-UPGR_LEN # The performance threshold in terms of mean episode legnth
-```
-Once the average episode legnth during evaluation exceed *UPGR_LEN* the environment get wider according the following the predefine step.
-
-
-The success of the incremental of the training relay on those 3 parameters: *init_depth, upgr_len and n_update*.
 
