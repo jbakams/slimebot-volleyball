@@ -36,26 +36,6 @@ For now we have able to train a PPO to play the game using self-play and Increme
 
 Though peforming well, the pretrain agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion](link) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](link).
 
-### 3.1. Incrementing sparsity of the training environement
-
-To make it work, we trained the agent in the 3 dimensions environment by stucking the z-axis (meaning the agent will read the 3 axes but the z value of both location and speed will always be zero). We noticed that the agent was training correctly as in 2d [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment.
-
-We realized that by starting in a low level of sparsity and incrementing it progressively as the agent is getting used to the environment was very helpful. So we did the following:
-
-  - The scene has a depth (z axis) of 24 units,we deivided it by 4 and start training the agent in a scene of depth equals to 6 units. To maximize its opportunity to hit the ball.
-  
-  <p align="center">
-  <img width="75%" src="https://github.com/jbakambana/3D-slimevolley/blob/main/Images/simulation_5.gif"></img>
-  </p>
-  <p align="center">
-  <em>The agent training with a narrowed depth at the beggining. Notice that he started to follow the ball</em>
-  </p>
-  
-  - After seeing that the agent has started to master the environment and reach of particular performance (mean reward or mean episode length) we upgrade the depth (let say 12 units) and continue the training. We noticed that,after increasing the depth, the performance will downgrade a bit before starting to go up again. But, at least the agent was able to follow the ball everywhere but was just missing it sometimes.
-  - We repeated the same rule of upgration of the depth until the agent will start playting on the maximum depth of the scene meaning 24 units.
-  - Depending on the initialization of the Neural Network, in one of the experiment the agent was able to play almost perfectly the game in more or less 10 millions timesteps (sometimes it needs above 20 M timesteps)
-
-
 
 ## 4. Challenges
 
@@ -76,12 +56,19 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
   <em>Collaborative selfplay training of 2 PPO in 2D fashion</em>
 </p>
 
-## Cocnlusion
+## Citing the project
+
+@misc{slimebot volleyball,
+  author = {Bakambana, Jeremie},
+  title = {Slimebot Volleyball},
+  year = {2022},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/jbakambana/slimebot-volleyball}},
+}
+
+## Conclusion
 
 The code might miss some elegance in its structure and syntaxe. Any contribution to improve the the project is welcome. Found another training methods than the Incremental Learning? We can still add it here.
-
-## References
-
-
 
 
