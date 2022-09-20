@@ -25,10 +25,10 @@ Defautly Webots use the operating system python. However using a virtual environ
 
 Though Webots has built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run the environment without Webots for training speeds for example.
 
+- Observation_Space: Though agents have cameras showing their respective views of the environment and the opponent, the training uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed xyz-coordinates of the ball, the opponent and itself. Which gives a total of 18 inputs for the obsevation.
+- Action_space: The basic actions taken by the agent are: *left, right, up, forward, backward  and stay still*. 3 actions maximum can be combined which  gives a total of 18 possible actions.
+- The environment can be be dynamic in the *z-axis*, it can take initially any value between 0 and 24 and can change during the training. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 - The objects in the 3D scene was created with [Blender](https://www.blender.org/) (for flexibility) and imported in Webots.
-- Observation_Space: Though agents have camera showing how the view the environment and the opponent, the taining uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed xyz-coordinates of the ball, the opponent and itself. Which gives a total of 18 for observation parameters.
-- Action_space: The basic actions taken by the agent are: left, right, up, forward, backward  and stay still. 3 actions maximum can be combined which  gives a total of 18 possible actions.
-- The environment can be be dynamic in the z-axis, it can take initially any value between 0 and 24 and can change during the training. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
 ## 3. Training of the single agent
 
