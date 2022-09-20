@@ -34,26 +34,16 @@ An overview of the environment preset before the taining.
 
 ```python
 env = VolleyBotSelfPlayEnv()
-
-# training = True means during training the ball will always be launched on the learning, this speeds up the training time
-env.training = True 
-
-# update = True, means the z axis will be incremented each time the performance threshold is reached during evaluation
-env.update = True # Defautly to False, if True the z axis will be incremented each time the performance threshold is
-
-# stuck = True, means no incrementation learning, the initial depth will stay fixed during the whole training
-env.world.stuck = False 
-
-# n_update precises the value of the step at each incrementation, step = 24/n_update
-# init_depth precises the value of the z axis at the initialization, it's not oblige to start with 0
-env.world.setup( n_update = 6, init_depth = 4) 
-                                              
+env.training = True # Defaulty False
+env.update = True # Defautly to False
+env.world.stuck = False # Defautly to False
+env.world.setup( n_update = 6, init_depth = 4)                                               
 env.seed(SEED)
 ```
-1. training: If True the ball will always be launched on the side of the learner, if False the ball will be launch randomnly on both directions
-2. update: If True the model will be training in a incremental fashion, if False no incrementation training, the model will be train in the full 3D space.
-3. stuck: If True the initial depth will stay static during the whole training. It's defaulty to False.
-4. world.setup( n_update = 6, init_depth = 4) : setting up the environment structure before the taining.
+1. *training*: If True the ball will always be launched on the side of the learner, if False the ball will be launch randomnly on both directions
+2. *update*: If True the model will be training in a incremental fashion, if False no incrementation training, the model will be train in the full 3D space.
+3. *stuck*: If True the initial depth will stay static during the whole training. It's defaulty to False.
+4. *world.setup( n_update = 6, init_depth = 4)* : setting up the environment structure before the taining.
 
 ## Trained Models
 
