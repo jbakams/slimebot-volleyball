@@ -46,8 +46,8 @@ env.seed(SEED)
 3. *stuck*: If True the initial depth will stay static during the whole training. It's defaulty to False.
 4. *world.setup( n_update = 6, init_depth = 4)* : setting up the environment structure before the taining.
 
-<p align="left">
-  <img width="50%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/incremental.png"></img>
+<p align="center">
+  <img width="75%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/incremental.png"></img>
 </p>
 
 ## Trained Model
