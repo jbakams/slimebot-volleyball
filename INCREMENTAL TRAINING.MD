@@ -17,7 +17,7 @@ We decided to shift again by adding 4 units to the z axis (from z= 4 to z = 8) t
 We are just expalining the main attribute of the environment that help in the incremental setting.
 
 ```python
-env = VolleyBotEnv()
+env = VolleyBotSelfPlayEnv()
 
 # training = True means during training the ball will always be launched on the learning, this speeds up the training time
 env.training = True 
