@@ -39,7 +39,7 @@ from environments.volleybot import VolleyBotEnv
 SEED = 715 # Try different seed 
 NUM_TIMESTEPS = int(1e9)
 EVAL_FREQ = int(1e5)
-EVAL_EPISODES = int(3e1)
+EVAL_EPISODES = int(1e2)
 BEST_THRESHOLD = 0.5 # must achieve a mean score above this to replace prev best self
 UPGR_LEN = 1500 # Increase the depth if the reach this average episode lenght in evaluation
 BEST_LEN = 1500
@@ -174,7 +174,7 @@ def train():
     env = VolleyBotSelfPlayEnv() 
     env.training = True
     env.update = True
-    env.world.setup(n_update = 4, init_depth = 0)
+    env.world.setup(n_update = 6, init_depth = 0)
     env.seed(SEED)
   
 
