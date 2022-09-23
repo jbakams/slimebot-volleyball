@@ -5,9 +5,13 @@ https://user-images.githubusercontent.com/59349943/188281632-5513d5a1-447d-4737-
   <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
 </p>
 
-slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional z-axis which makes the training more challenging for RL agents such as PPO.
+---
+
+Slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the slimevolleygym environment is the additional z-axis which makes the training more challenging for RL agents such as PPO.
 
 The pre-trained PPO in this repository was trained with an Incremental Setting. See details in this [page](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD)
+
+---
 
 ## Presets
 
@@ -32,9 +36,9 @@ Though Webots has built-in physics system, we used the same physics as with the 
 
 ## Training Overview
 
-For now we have able to train a PPO to play the game using self-play and Incremental learnings. Depending on the initialization, the agent can start palying in the full 3D space and last the maximum episode legnth before 10 Million timesteps of training. see the [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) and this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
+For now we have been able to train a PPO agent to play the game using *self-play* and *incremental* learnings. Depending on the initialization, the agent can start palying in the full 3D space and last the maximum episode legnth before 10 Million timesteps of training. see the [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) and this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
-Though peforming well, the pretrain agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion](link) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/evaluation/evaluation.py).
+Though peforming well, the pretrain agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion]([link](https://github.com/jbakambana/slimebot-volleyball/tree/main/slimebot-volleyball/controllers/trained_models/ppo2_selfplay)) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/evaluation/evaluation.py).
 
 
 ## Challenges
@@ -58,9 +62,9 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
 
 ## Citing the project
 ```latex
-@misc{slimebot volleyball,
+@misc{slimebot-volleyball,
   author = {Bakambana, Jeremie},
-  title = {Slimebot Volleyball},
+  title = {Slimebot Volleyball: A multi-agents 3D gym environment for slime volleyball game},
   year = {2022},
   publisher = {GitHub},
   journal = {GitHub repository},
