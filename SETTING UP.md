@@ -2,7 +2,7 @@
 
 This section shows how to set up python in Webots R2021b using a virtual environment. It may probably not apply to higher versions.
 
-## virtual environment
+### virtual environment
 
 Once [anaconda](https://docs.anaconda.com/anaconda/install/) is installed, open the command line and enter:
 
@@ -10,7 +10,7 @@ Once [anaconda](https://docs.anaconda.com/anaconda/install/) is installed, open 
 conda create -n webots python=3.7
 conda activate webots
 ```
-## Dependencies
+### Dependencies
 
 With the virtual env activated, install all dependencies using pip
 
@@ -21,7 +21,7 @@ pip install opencv-python
 ```
 And any additional library one would like to use ([Tensorflow](https://www.tensorflow.org/install), [Pytorch](https://pytorch.org/get-started/locally/), etc.).
 
-## Python path in Webots R2021b
+### Python path in Webots R2021b
 
 Open Webots. On the top right go to the follwoing options: *Tools>Preferences*
 
@@ -38,7 +38,7 @@ This section is only if you are interested on running simulation in Webots. The 
 
 [Webots](https://cyberbotics.com/) is multi-purposes software for robotic simualtions. You can refer to the [User Guide](https://cyberbotics.com/doc/guide/getting-started-with-webots) to have an overview on how it works. In this section we are explaining the important options regarding our projects.
 
-## Interface overview
+### Interface overview
 
 <p align="center">
   <img width="45%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/ref2.png"></img>
@@ -54,7 +54,7 @@ According to numbers in the image above:
 3. IDE: Webots has a built-in IDE that allows to type codes and scripts directly in Webots. It is possible to use an external IDE such Visual Studio or Pycharm using the following [guide](https://cyberbotics.com/doc/guide/using-your-ide) to run simulation outside of Webots. 
 4. Scene Tree: The scene tree contain the list of all elements in the 3D scene and their specific attributes (color, physics, etc.) For this game we don't have to worry about it, except the need of customizing the default 3D scene of the game.
 
-## Running a simulation
+### Run a simulation
 
 There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the cursor on top of a button and a text message will appear to explain what is the button use for. Let give a briefing about some of them.
 
@@ -71,7 +71,7 @@ There are some Buttons on top of the 3D scene and Scene Tree pannels. Place the 
 
 The timeline pannel on the left of the show the running time of the simulation. you can pause the simulation and continue it later, as long as Webots doesn't shut down.
 
-## Open a project
+### Open a project
 
 To open a project in webots go on the top right a follow those options: *File>Open World*
 
@@ -81,7 +81,7 @@ Then navigate into your device where the prject is saved and seek for the file: 
   
  Once the project open, you can run the simulation. But should make sure to have the right controller script running.
 
-## Controllers
+### Controllers
 
 A [controller](https://cyberbotics.com/doc/guide/controller-programming) in webots is a script in charge on controller dynamics of the simulation. They are two kind of controllers *robot-controller* and *supervisor-controller*. We are more interested in the supervisor for now. To train or evaluate an agent we need to define the script as a controller such that *Webots* will recognize it.
 
@@ -105,7 +105,7 @@ They are predefine controllers in the project that one is free to test and ajust
 
 Though the code can run independently from *Webots*, but we'll see now how to create a controller script that Webots can recognize for the simulation.
 
-## Customized Controller
+### Customized Controller
 
 To create a customized controller go on the top of *Webots* and click on the following options: *Wizards> New Robot Controller...*
 
