@@ -51,7 +51,7 @@ env.seed(SEED)
 </p>
 
 <p align="center">
-  <em>Illustration of incremental learning.  We can notice that the performance drop down after each incrementation, but the agent was able to adapt everytime.</em>
+  <em>Illustration of incremental learning with an initial depth of 0 (z = 0).  We can notice that the performance drop down after each incrementation, but the agent was able to adapt everytime.</em>
 </p>
 
 ---
