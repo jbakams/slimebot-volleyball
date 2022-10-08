@@ -36,7 +36,7 @@ from shutil import copyfile # keep track of generations
 
 from environments.volleybot import VolleyBotEnv
 # Settings
-SEED = 715 # Try different seed 
+SEED = 723 # Try different seed 
 NUM_TIMESTEPS = int(1e9)
 EVAL_FREQ = int(1e5)
 EVAL_EPISODES = int(1e2)
