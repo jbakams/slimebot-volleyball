@@ -174,6 +174,7 @@ def train():
     env = VolleyBotSelfPlayEnv() 
     env.training = True
     env.update = True
+    env.world.stuck = False
     env.world.setup(n_update = 6, init_depth = 0)
     env.seed(SEED)
   
