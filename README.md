@@ -68,7 +68,7 @@ https://user-images.githubusercontent.com/59349943/191286958-cacc7b9d-372b-4b66-
   year = {2022},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/jbakambana/slimebot-volleyball}},
+  howpublished = {\url{https://github.com/jbakams/slimebot-volleyball}},
 }
 ```
 ## Conclusion
