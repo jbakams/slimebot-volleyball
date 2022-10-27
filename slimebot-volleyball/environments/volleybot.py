@@ -89,7 +89,7 @@ class World:
         self.stuck = False
         self.setup()
   
-    def setup(self, n_update = 6, init_depth = 4):
+    def setup(self, n_increment = 6, init_depth = 4):
         """
         Function that set up the depth of the environement before and during the training.
         If update = True the depth is setup, else the depth is set equal to the maximum depth
@@ -104,11 +104,11 @@ class World:
             self.step = 0
             self.wall_depth = self.depth = init_depth        
         else: 
-            self.step = self.max_depth/n_update  
+            self.step = self.max_depth/n_increment  
             self.wall_depth  = self.depth = init_depth  
 
     
-    def update_world(self):
+    def increment_world(self):
         """
         Function that update the depth of the court if the parameter "update" is True
         """
@@ -872,9 +872,9 @@ class VolleyBotEnv(gym.Env):
     def get_action_meanings(self):
         return [self.atari_action_meaning[i] for i in self.atari_action_set]
     
-    def update_world(self):  
+    def increment_world(self):  
         if self.update:
-            self.world.update_world()
+            self.world.increment_world()
         if not self.world.update:
             self.update = False
             self.training = False

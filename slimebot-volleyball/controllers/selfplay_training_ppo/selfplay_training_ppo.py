@@ -41,10 +41,10 @@ NUM_TIMESTEPS = int(1e9)
 EVAL_FREQ = int(1e5)
 EVAL_EPISODES = int(1e2)
 BEST_THRESHOLD = 0.5 # must achieve a mean score above this to replace prev best self
-UPGR_LEN = 1500 # Increase the depth if the reach this average episode lenght in evaluation
+INCREMENT_THRESHOLD = 1500 # Increase the depth each time the agent reaches this average episode lenght during evaluation
 BEST_LEN = 1500
 
-LOGDIR = "ppo2_selfplay"
+LOGDIR = "ppo2_selfplay_test"
 
 
 
@@ -87,10 +87,11 @@ class SelfPlayCallback(EvalCallback):
     # after saving model, resets the best score to be BEST_THRESHOLD
     def __init__(self, env, *args, **kwargs):
         super(SelfPlayCallback, self).__init__(*args, **kwargs)
+        
         self.best_mean_reward = BEST_THRESHOLD
-        self.upgr_len = UPGR_LEN
-        self.n_upgr = 0
-        self.count_upgr = 0
+        self.increment_threshold = INCREMENT_THRESHOLD
+        self.n_increment = 0
+        self.count_increment = 0
         self.generation = 0
         self.env = env
         self.best_mean_len = BEST_LEN
@@ -102,6 +103,7 @@ class SelfPlayCallback(EvalCallback):
     def _on_step(self) -> bool:
        
         result = super(SelfPlayCallback, self)._on_step()
+        
         if result and self.best_mean_reward > BEST_THRESHOLD:
             self.generation += 1
             print("SELFPLAY: mean_reward achiaeved:", self.best_mean_reward)
@@ -113,11 +115,11 @@ class SelfPlayCallback(EvalCallback):
             self.new_model = True                       
     
         #print(self.env.game.agent_right.getObservation()  )  
-        if self.last_mean_len >= self.upgr_len:
+        if self.last_mean_len >= self.increment_threshold:
         
             if self.env.update and (self.n_calls % self.eval_freq == 0):
-                self.env.update_world()
-                print("SELFPLAY: environment upgraded, actual depth:", int(self.env.world.depth))
+                self.env.increment_world()
+                print("SELFPLAY: Environment incremented, actual depth:", int(self.env.world.depth))
                 self.prev_best_mean_len = self.best_mean_len = BEST_LEN 
                 self.new_depth = True               
             
@@ -175,7 +177,7 @@ def train():
     env.training = True
     env.update = True
     env.world.stuck = False
-    env.world.setup(n_update = 6, init_depth = 0)
+    env.world.setup(n_increment = 6, init_depth = 0)
     env.seed(SEED)
   
 
