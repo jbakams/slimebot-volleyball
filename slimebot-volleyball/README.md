@@ -1,6 +1,6 @@
 ## controllers:
 
-The directory contains different scripts and controller to train agent. Always reate a controller script in Webots, otherwise it won't recognize it for a graphic similation.
+The directory contains different scripts and controllers for training agent and to controling robot in the simulator . Always create a controller script within [Webots](https://cyberbotics.com), otherwise it won't recognize it for a graphic similation.
 
 ## environments:
 
