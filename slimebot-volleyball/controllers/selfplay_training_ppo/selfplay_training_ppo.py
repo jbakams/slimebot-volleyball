@@ -44,7 +44,7 @@ BEST_THRESHOLD = 0.5 # must achieve a mean score above this to replace prev best
 INCREMENT_THRESHOLD = 1500 # Increase the depth each time the agent reaches this average episode lenght during evaluation
 BEST_LEN = 1500
 
-LOGDIR = "ppo2_selfplay_test"
+LOGDIR = "ppo2_selfplay"
 
 
 
