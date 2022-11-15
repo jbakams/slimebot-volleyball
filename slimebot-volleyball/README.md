@@ -1,15 +1,15 @@
 ## controllers:
 
-The directory contains different scripts and controllers for training agent and to controling robot in the simulator . Always create a controller script within [Webots](https://cyberbotics.com), otherwise it won't recognize it for a graphical simulation.
+The directory contains different scripts and controllers to train agents and control robots in the simulator. [Webots](https://cyberbotics.com) recognizes only controllers created inside the software. If you a controller is created outside of the software it can only use it with other IDEs.
 
 ## environments:
 
-Contains a script of our default gym-like environment.
+Contains the environment script.
 
 ## helpers:
 
-Contains some functional script such as the callback class
+Contains some functional scripts such as the callback class
 
 ## worlds:
 
-Contains different 3D spaces representations that can be used with the slimebot-volleyball. the world should match with the given gym environment.
+Contains different game scene and all 3D objects. The file can be open from Webots via the command "File>Open World".
