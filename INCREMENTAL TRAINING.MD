@@ -27,7 +27,10 @@ In the follwing Figures we can see two different incremental training. The first
 <p align="center">
   <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 2500, and incremental step of 12. In this case every time the average episode length reaches 2500 the depth gets incremented for 12 units. This means the environment will increment only twice to reach a depth of 24. And we see that the PPO algorithm adapted to the increment even if the incremental step was big.
 </p>
+  
 ---
+
+ The yellow agent is the main page is the one trained with a threshold of 500 and incremental step of 1; the Blue player is the one trained with a threshold of 2500 and incremental step of 12. We can see in the main page video that both agent expertises are similar even if they didn't train gradually the same way.
 
 ## Key Elements
 
