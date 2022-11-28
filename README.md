@@ -1,8 +1,9 @@
 # slimebot-volleyball: 
 
-https://user-images.githubusercontent.com/59349943/188281632-5513d5a1-447d-4737-9fc8-089ef29249ef.mp4
+https://user-images.githubusercontent.com/59349943/204383877-084e76f4-82da-4c67-9a5b-cb33832bf546.mp4
+
 <p align="center">
-  <em>PPO agent trained in an incremental fashion using self-play training(both players are controlled by the same Model)</em>
+  <em>PPO agents trained with Incrmental Reinforcement Learning using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12 </em>
 </p>
 
 ---
