@@ -13,10 +13,13 @@ https://user-images.githubusercontent.com/59349943/191252794-0a18fbee-15ed-49fb-
 In the follwing Figures we can see two different incremental training. The first with a low threshold a small incremental step, and the second one with a high threshold and incremental step.
 
 ---
+<p align="center">
 ![graph_500](https://user-images.githubusercontent.com/59349943/204380885-f3d1f0b6-cb66-4ba9-a453-0d2e1a63390e.png)
+</p>
 <p align="center">
   <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 500 and uncremental step of 1. This means everytime the average episode length reaches 500 the depth gets incremented for 1 units</em>
 </p>
+
 ---
 
 ## Key Elements
