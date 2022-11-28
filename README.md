@@ -3,7 +3,7 @@
 https://user-images.githubusercontent.com/59349943/204383877-084e76f4-82da-4c67-9a5b-cb33832bf546.mp4
 
 <p align="center">
-  <em>PPO agents trained with Incrmental Reinforcement Learning using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12 </em>
+  <em>PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12 </em>
 </p>
 
 ---
