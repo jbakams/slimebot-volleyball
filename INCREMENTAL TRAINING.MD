@@ -17,7 +17,7 @@ In the follwing Figures we can see two different incremental training. The first
 ![graph_500](https://user-images.githubusercontent.com/59349943/204380885-f3d1f0b6-cb66-4ba9-a453-0d2e1a63390e.png)
   
 <p align="center">
-  <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 500 and uncremental step of 1. This means every time the average episode length reaches 500 the depth gets incremented for 1 unit. By counting the red diamonds, we see that the PPO adapted to 24 increment</em>
+  <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 500, and uncremental step of 1. This means every time the average episode length reaches 500 the depth gets incremented for 1 unit. By counting the red diamonds, we see that the PPO adapted to 24 increment</em>
 </p>
 
 ---
@@ -25,7 +25,7 @@ In the follwing Figures we can see two different incremental training. The first
 ![graph_2500](https://user-images.githubusercontent.com/59349943/204382042-db0b95e5-58f6-49b3-8dc8-4e9ee3bb4ce9.png)
 
 <p align="center">
-  <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 2500 and uncremental step of 12. In this case every time the average episode length reaches 2500 the depth gets incremented for 12 units. This means the environment will increment only twice to reach a depth of 24. And we see that the PPO algorithm adapted to the increment even if the incremental step was big.
+  <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 2500, and incremental step of 12. In this case every time the average episode length reaches 2500 the depth gets incremented for 12 units. This means the environment will increment only twice to reach a depth of 24. And we see that the PPO algorithm adapted to the increment even if the incremental step was big.
 </p>
 ---
 
