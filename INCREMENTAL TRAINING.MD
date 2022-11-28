@@ -1,15 +1,23 @@
-#### Note:
-*The following script is a part of my MEng research project which investigates the ability of incremental Reinforcement Learning in a Collaborative Multi-Agents setting. Feel free to contact me for more details.*
+This post explain how we managed to train the PPO algorithm to solve the game with Incremental Reinfrocement Learning.
 
-# Self Play Incremental Training
+# Self-Play Incremental Training
 
-The *tabula rasa* failed in training the RL agent in the 3D environment. We try to train the agent from scratch in the 3D environment but the agent didn't show any progress at all after more than 20M timesteps. As the agent can train in the 2D version, we explored the ability to train it using a curriculum incremental fashion from 2D to 3D which worked hopefully.
+We aimed to train the PPO from scratch in the 3D environment but the algorithm did not show progress after more than twenty million timesteps. As shown in the video below, we applied Incremental Learning, by freezing the $z-$axis to made agents and ball moving only along x and y axes, similarly to the slimevolleygym environment. We defined an Performance Threshold such that every time the mean episode length surpass the Threshold, the environment get incremented along the z-axis according a given incremental step. We repeat the same process untill the environment reaches a maximum depth of 24.
 
 https://user-images.githubusercontent.com/59349943/191252794-0a18fbee-15ed-49fb-9d7b-c1c50f2d4ea8.mp4
 
 <p align="center">
-  <em>Top view of the incremental learning process</em>
+  <em>Top view of the incremental learning process with an Initial Depth of 0, Threshold of 1500 and Incremental Step of 4</em>
 </p>
+
+In the follwing Figures we can see two different incremental training. The first with a low threshold a small incremental step, and the second one with a high threshold and incremental step.
+
+---
+![graph_500](https://user-images.githubusercontent.com/59349943/204380885-f3d1f0b6-cb66-4ba9-a453-0d2e1a63390e.png)
+<p align="center">
+  <em>Illustration of incremental learning with an initial depth of 0 (z = 0), performance threshold of 500 and uncremental step of 1. This means everytime the average episode length reaches 500 the depth gets incremented for 1 units</em>
+</p>
+---
 
 ## Key Elements
 
