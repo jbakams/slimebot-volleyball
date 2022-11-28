@@ -1,18 +1,14 @@
 # slimebot-volleyball: 
 
-Slimebot-volleyball is a 3d version of the slime volley game. The game is built on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment is the additional z-axis which makes the training more challenging for RL agents such as PPO.
+Slimebot-volleyball is a 3D version of the slime volleyball game. The game is implemented on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment is the additional z-axis, which makes the training more challenging for RL agents such as PPO.
 
 ---
 
 https://user-images.githubusercontent.com/59349943/204383877-084e76f4-82da-4c67-9a5b-cb33832bf546.mp4
 
 <p align="center">
-  <em>PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12 </em>
+  <em>Evaluation of PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12. More details are given in this [page](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD). </em>
 </p>
-
----
-
-The pre-trained PPO in this repository was trained with an Incremental Fashion. See details in this [page](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD)
 
 ---
 
