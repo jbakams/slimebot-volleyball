@@ -7,7 +7,7 @@ Slimebot-volleyball is a 3D version of the slime volleyball game. The game is im
 https://user-images.githubusercontent.com/59349943/204383877-084e76f4-82da-4c67-9a5b-cb33832bf546.mp4
 
 
-Evaluation of two PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12. More details are given in this [page](https://github.com/jbakams/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD)
+Evaluation of two PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12. More details are given in this [page](https://github.com/jbakams/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD).
 
 ---
 
