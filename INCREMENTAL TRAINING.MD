@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/59349943/191252794-0a18fbee-15ed-49fb-
   <em>Top view of the incremental learning process with an Initial Depth of 0, Threshold of 1500 and Incremental Step of 4</em>
 </p>
 
-In the follwing Figures we can see two different incremental training. The first with a low threshold a small incremental step, and the second one with a high threshold and incremental step.
+In the follwing Figures we can see two different incremental training. The first graphic show the incremental training progress with a low threshold and a small incremental step, and the second one with a high threshold and an big incremental step.
 
 ---
 
