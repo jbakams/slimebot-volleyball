@@ -15,7 +15,7 @@ Evaluation of a team collaboration with 2 independent PPO agents trained in a de
 
 #### 1. Webots R2021b:
 
-[Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it if you are interested in running simulations. We recommand the version R2021b to avoid bugs with recent versions.
+[Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it if you are interested in running simulations (Agents can be trained without simulator). We recommand the version R2021b to avoid bugs with recent versions.
 
 #### 2. Python 3.X:
 
