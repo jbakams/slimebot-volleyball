@@ -3,6 +3,11 @@
 Slimebot-volleyball is a 3D version of the slime volleyball game. The game is implemented on top of [slimevolleygym](https://github.com/hardmaru/slimevolleygym) and uses [Webots](https://cyberbotics.com/) as a simulator for visualization. The major difference with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) environment is the additional z-axis, which makes the training more challenging for RL agents such as PPO.
 
 ---
+<p align="left">
+  <img width="100%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/mutti-agent_evaluation.gif"></img>
+</p>
+
+---
 https://user-images.githubusercontent.com/59349943/204865773-d5ba24e8-9ec2-4d5d-8427-6a8fa52e2abe.mp4
 
 
