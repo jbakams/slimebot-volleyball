@@ -13,8 +13,6 @@ Evaluation of a team collaboration with 2 independent PPO agents trained in a de
 
 ## Requirements
 
-In our knowledge just a few dependencies are required to run this environment: [gym](https://github.com/openai/gym), open_cv
-
 #### 1. Webots R2021b:
 
 [Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it if you are interested in running simulations. We recommand the version R2021b to avoid bugs with recent versions.
@@ -22,6 +20,10 @@ In our knowledge just a few dependencies are required to run this environment: [
 #### 2. Python 3.X:
 
 Defaultly, Webots uses the operating system python. However, we recommend using a virtual environment. We used python 3.7 because of Stablebaselines. If  using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) to easily set up python in Webots R2021b.
+
+### 3. [Gym](https://github.com/openai/gym)
+
+Slimebot Volleyball is a gym-like envirnment. So one needs to install gym in python.
 
 ## The Environment
 
