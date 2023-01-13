@@ -7,13 +7,7 @@ Slimebot-volleyball is a 3D version of the slime volleyball game. The game is im
   <img width="65%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/mutti-agent_evaluation.gif"></img>
 </p>
 
----
-https://user-images.githubusercontent.com/59349943/204865773-d5ba24e8-9ec2-4d5d-8427-6a8fa52e2abe.mp4
-
-
-
-
-Evaluation of two PPO agents trained with Incrmental Reinforcement Learning. Both agents were trained separately using Self-Play training. The yellow agent has been trained with and incremental step of 1 and the blue agent has been trained with an incremtal step of 12. More details are given in this [page](https://github.com/jbakams/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD).
+Evaluation of a team collaboration with 2 independent PPO agents trained in a decentralized fashion with Incrmental Reinforcement Learning and Self-Play Learning. The training script is given [here](https://github.com/jbakams/slimebot-volleyball/blob/main/slimebot-volleyball/2_vs_2/controllers/selfplay_mappo2/selfplay_mappo2.py).
 
 ---
 
