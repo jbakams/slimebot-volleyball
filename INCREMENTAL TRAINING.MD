@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/59349943/191252794-0a18fbee-15ed-49fb-
   <em>Top view of the incremental learning process with an Initial Depth of 0, Threshold of 1500 and Incremental Step of 4</em>
 </p>
 
-In the follwing Figures we can see two different incremental training. The first with a low threshold a small incremental step, and the second one with a high threshold and incremental step.
+In the follwing Figures we can see two different incremental training. The first graphic show the incremental training progress with a low threshold and a small incremental step, and the second one with a high threshold and an big incremental step.
 
 ---
 
@@ -66,14 +66,6 @@ env.seed(SEED)
 2. *update*: If True the model will be trained incrementally, if False no incrementation training, the model will be trained in the full 3D space.
 3. *stuck*: If True the initial depth will stay static during the whole training. It defaults to False.
 4. *world.setup( n_increment = 6, init_depth = 4)* : setting up the environment structure before the training.
----
-<p align="center">
-  <img width="75%" src="https://github.com/jbakambana/slimebot-volleyball/blob/main/Images/incremental.png"></img>
-</p>
-
-<p align="center">
-  <em>Illustration of incremental learning with an initial depth of 0 (z = 0).  We can notice that the performance drops down after each incrementation, but the agent was able to adapt every time.</em>
-</p>
 
 ---
 
