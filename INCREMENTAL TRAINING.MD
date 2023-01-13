@@ -34,7 +34,7 @@ In the follwing Figures we can see two different incremental training. The first
 
 ## Key Elements
 
-In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/selfplay_training_ppo/selfplay_training_ppo.py) 3 main attributes make the incremental training a success:
+In the training [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/1_vs_1/controllers/selfplay_training_ppo/selfplay_training_ppo.py) 3 main attributes make the incremental training a success:
 #### Incrementation Threshold
 ```python
 INCREMENT_THRESHOLD  # The performance threshold in terms of mean episode length
