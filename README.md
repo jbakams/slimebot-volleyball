@@ -11,13 +11,13 @@ Evaluation of a team collaboration with 2 independent PPO agents trained in a de
 
 ---
 
-## Presets
+## Requirements
 
 In our knowledge just a few dependencies are required to run this environment: [gym](https://github.com/openai/gym), open_cv
 
-#### 1. Webots:
+#### 1. Webots R2021b:
 
-Webots is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Download](https://cyberbotics.com/) it from the official website and [Install](https://cyberbotics.com/doc/guide/installing-webots) it following the official guidelines. We recommand version R2021b to avoid compatibility bugs with more recent versions.
+[Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it you are interested in running simulation. We recommand version R2021b to avoid compatibility bugs with more recent versions.
 
 #### 2. Python:
 
