@@ -49,17 +49,6 @@ The use of state observation shows weakness in the input dimension when we need 
 - Distance sensor: The built-in distance sensor may be used to generate observations as the agent can detect objects by distance.
 - Combine sensors: Refers to Human abilities to use different senses at the same time. Combining different sensors can bring better training or in the worse case brings confusion to the agent during training.
 
-#### Cooperative training of 2 PPO agents
-
-Training script coming ...
-
-https://user-images.githubusercontent.com/59349943/204865959-d3851632-cb13-4ed6-877f-b51d0ab39350.mp4
-
-
-<p align="center">
-  <em>Evaluation of 2 Independent PPOs trained with Incremental Learning, Reward Saping and Self-Play </em>
-</p>
-
 ## Citing the project
 ```latex
 @misc{slimebot-volleyball,
