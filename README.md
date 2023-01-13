@@ -4,7 +4,7 @@ Slimebot-volleyball is a 3D version of the slime volleyball game. The game is im
 
 ---
 <p align="left">
-  <img width="100%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/mutti-agent_evaluation.gif"></img>
+  <img width="50%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/mutti-agent_evaluation.gif"></img>
 </p>
 
 ---
