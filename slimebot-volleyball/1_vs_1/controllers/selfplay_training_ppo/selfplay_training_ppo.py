@@ -19,7 +19,7 @@ of the learner.
 
 import sys
 #append the main game directory path
-sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball")
+sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1")
 
 
 import os

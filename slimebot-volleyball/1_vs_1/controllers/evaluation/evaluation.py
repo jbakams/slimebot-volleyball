@@ -1,5 +1,5 @@
 import sys
-main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball"
+main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1"
 sys.path.append(main_path)
 
 
@@ -69,7 +69,7 @@ def evaluate():
     env = VolleyBotEnv()    
     env.world.stuck = True
     env.update = True  
-    env.world.setup(n_update = 6, init_depth = 24)
+    env.world.setup(n_increment = 6, init_depth = 24)
     env.seed(SEED)
   
 
