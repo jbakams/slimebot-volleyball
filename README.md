@@ -17,11 +17,11 @@ In our knowledge just a few dependencies are required to run this environment: [
 
 #### 1. Webots R2021b:
 
-[Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it you are interested in running simulation. We recommand version R2021b to avoid compatibility bugs with more recent versions.
+[Webots](https://cyberbotics.com/)  is open-source and multi-platform software used to simulate robots. It is friendly and doesn't have strong device requirements. [Install](https://cyberbotics.com/doc/guide/installing-webots) it if you are interested in running simulations. We recommand the version R2021b to avoid bugs with recent versions.
 
-#### 2. Python:
+#### 2. Python 3.X:
 
-Default Webots use the operating system python. However, using a virtual environment is more convenient. Though the environment is fine with any python 3.X, we recommand python 3.7. If using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) explain how to easily set up python in Webots R2021b.
+Defaultly, Webots uses the operating system python. However, we recommend using a virtual environment. We used python 3.7 because of Stablebaselines. If  using a Webots version different from R2021b, please refer to the [Webots User Guide](https://cyberbotics.com/doc/guide/using-python) to set up python. Otherwise, use the following [steps](https://github.com/jbakambana/slimebot-volleyball/blob/main/SETTING%20UP.md) to easily set up python in Webots R2021b.
 
 ## The Environment
 
