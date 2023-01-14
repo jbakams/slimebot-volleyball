@@ -27,9 +27,12 @@ Slimebot Volleyball is a gym-like envirnment. So one needs to install gym in pyt
 
 ## The Environment
 
-Though Webots has a built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows running the environment without Webots for training speeds for example. The trainer is the yellow player and the blue player is the opponent.
+Although Webots has a built-in physics system, we used the same physics as with the [slimevolleygym](https://github.com/hardmaru/slimevolleygym) game. This allows to run the environment in a CMD without Webots. The training side is the yellow and the blue side is the opponent.
 
-- Observation_Space: Though agents have cameras showing their respective views of the environment and the opponent, the training uses state observation. The pixels version is not yet set up. At each timestep the agent reads the location and speed XYZ-coordinates of the ball, the opponent, and itself. Which gives a total of 18 inputs for the observation.
+#### 1. Observation space
+
+Although agents have cameras showing their respective views of the environment, We trained agents using *state observation*. The pixels version is not yet set up. At each timestep the agent reads the location and speed XYZ-coordinates of the ball and each agent present in the scene. Depending on the scenario, the observation shape is $(n+1)\times 6$ with $n$ number of agents in the game.
+
 - Action_space: The basic actions taken by the agent are: *left, right, up, forward, backward, and stay still*. 3 actions maximum can be combined which gives a total of 18 possible actions.
 - The environment can be dynamic in the *z-axis*, it can take initially any value between 0 and 24 and can change during the training. See this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 - The objects in the 3D scene were created with [Blender](https://www.blender.org/) (for flexibility) and imported into Webots.
