@@ -52,6 +52,21 @@ The are 6 basic actions represented with the following 1 hot encding:
 
 3 actions maximum can be combined as long as they don't contradict each other(combining left and right doesn't make sense). Which gives a total of 18 possible actions.
 
+## Scenarios
+We have two secnarios at the moment:
+
+#### [1 vs 1](https://github.com/jbakams/slimebot-volleyball/tree/main/slimebot-volleyball/1_vs_1)
+
+<p align="left">
+  <img width="50%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/single.png"></img>
+</p>
+
+#### [2 vs 2](https://github.com/jbakams/slimebot-volleyball/tree/main/slimebot-volleyball/2_vs_2)
+
+<p align="left">
+  <img width="50%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/team.png"></img>
+</p>
+
 
 ## Training Overview
 
