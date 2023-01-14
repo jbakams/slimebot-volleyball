@@ -58,7 +58,7 @@ We have two secnarios at the moment:
 #### 1. [1 vs 1](https://github.com/jbakams/slimebot-volleyball/tree/main/slimebot-volleyball/1_vs_1)
 
 <p align="left">
-  <img width="50%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/single.png"></img>
+  <img width="65%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/single.png"></img>
 </p>
 
 The yellow player represents the agent we aim to training to defeat the blue agent. Cameras at each bottom corners shows views for respective agents.
@@ -66,7 +66,7 @@ The yellow player represents the agent we aim to training to defeat the blue age
 #### 2. [2 vs 2](https://github.com/jbakams/slimebot-volleyball/tree/main/slimebot-volleyball/2_vs_2)
 
 <p align="left">
-  <img width="50%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/team.png"></img>
+  <img width="65%" src="https://github.com/jbakams/slimebot-volleyball/blob/main/Images/team.png"></img>
 </p>
 
 The yellow agents represen the team we aim to train to defeat the blue agents. Teammates can collide and bounce if hitting each others. The training is more hectic comparing to the 1 vs 1 case.
