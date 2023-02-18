@@ -4,9 +4,8 @@ WorldInfo {
 }
 Viewpoint {
   orientation 0.9229149725967999 0.37251538297370795 0.09726377951015257 5.731778796206365
-  position -1.1116462326406185 3.5534736774747953 4.8662820003136575
-  follow "solid:solid:solid"
-  followType "None"
+  position -1.399148616062328 4.326368977685482 6.215156384552054
+  follow "solid(2)"
 }
 TexturedBackground {
 }
@@ -377,7 +376,7 @@ DEF BALL Solid {
   boundingObject USE Ball
 }
 DEF SCENE_CONTROL Robot {
-  controller "selfplay_training_ppo"
+  controller "evaluation"
   supervisor TRUE
 }
 DEF piste Solid {

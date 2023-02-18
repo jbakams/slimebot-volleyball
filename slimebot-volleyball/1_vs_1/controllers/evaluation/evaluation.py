@@ -1,5 +1,8 @@
 import sys
-main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1"
+#main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1"
+import os
+print(os.getcwd())
+main_path = "C:\\Users\\Jey\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\1_vs_1"
 sys.path.append(main_path)
 
 
@@ -21,7 +24,8 @@ from shutil import copyfile # keep track of generations
 from environments.volleybot import VolleyBotEnv
 
 SEED = 713
-LOGDIR = "/controllers/trained_models/ppo2_selfplay"
+#LOGDIR = "/controllers/trained_models/ppo2_selfplay"
+LOGDIR = "\\controllers\\trained_models\\ppo2_selfplay"
 
 def rollout(env, policy1, policy2 = None):
     """ play one agent vs the other in modified gym-style loop. """
@@ -77,7 +81,7 @@ def evaluate():
     model = PPO2(MlpPolicy, env, n_steps=4096, cliprange=0.2, ent_coef=0.0, noptepochs=4,
                    learning_rate=3e-4, nminibatches=64, gamma=0.99, lam=0.95, verbose=2)
                    
-    model = PPO2.load(main_path + LOGDIR + "/best_model", env=None)
+    model = PPO2.load(main_path + LOGDIR + "\\best_model", env=None)
     
     env.policy = Baseline(model)
     
