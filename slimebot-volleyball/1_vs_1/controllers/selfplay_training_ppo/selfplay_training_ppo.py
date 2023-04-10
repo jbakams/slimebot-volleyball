@@ -17,9 +17,14 @@ learner (slimevolleygym approach) or it can be done by playing instantly with th
 of the learner.
 """
 
-import sys
-#append the main game directory path
+import sys 
+
+#appending the main game directory path
+
+#####    Linux   #######
 #sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1")
+
+#####    Windows    ######
 sys.path.append("C:\Users\Jey\Documents\GitHub\slimebot-volleyball\slimebot-volleyball\1_vs_1")
 
 
@@ -28,7 +33,7 @@ import os
 import gym
 import numpy as np
 
-from ppo2 import PPO2 # appending the customized stablebaselines ppo
+from ppo2 import PPO2 # import the customized stablebaselines ppo
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines import logger
 from helpers.callbacks import EvalCallback

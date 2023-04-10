@@ -1,7 +1,6 @@
 import sys
 #main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1"
-import os
-print(os.getcwd())
+
 main_path = "C:\\Users\\Jey\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\1_vs_1"
 sys.path.append(main_path)
 
@@ -24,6 +23,7 @@ from shutil import copyfile # keep track of generations
 from environments.volleybot import VolleyBotEnv
 
 SEED = 713
+
 #LOGDIR = "/controllers/trained_models/ppo2_selfplay"
 LOGDIR = "\\controllers\\trained_models\\ppo2_selfplay"
 

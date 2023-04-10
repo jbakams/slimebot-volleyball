@@ -20,7 +20,7 @@ class AgentRobot(Robot):
         
     def run(self):
         while True:
-            #self.getobs()
+            #print(self.getobs())
             self.step(self.timeStep)          
                       
 
