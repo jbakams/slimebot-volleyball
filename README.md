@@ -76,7 +76,7 @@ The yellow agents represen the team we aim to train to defeat the blue agents. T
 
 For now, we have been able to train a PPO agent to play the game using *self-play* and *incremental* learning. Depending on the initialization, the agent can start playing in the full 3D space and last the maximum episode length before 10 Million timesteps of training. see the [script](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/1_vs_1/controllers/selfplay_training_ppo/selfplay_training_ppo.py) and this [post](https://github.com/jbakambana/slimebot-volleyball/blob/main/INCREMENTAL%20TRAINING.MD) for more details.
 
-Though performing well, the pretrained agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion]([link](https://github.com/jbakambana/slimebot-volleyball/tree/main/slimebot-volleyball/1_vs_1/controllers/trained_models/ppo2_selfplay)) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/controllers/evaluation/evaluation.py).
+Though performing well, the pretrained agent didn't reach the same perfection in 3D as it did in the 2D version of the game. The actual [champion]([link](https://github.com/jbakambana/slimebot-volleyball/tree/main/slimebot-volleyball/1_vs_1/controllers/trained_models/ppo2_selfplay)) is the best we got after trying different training settings and seedings. It can be replaced by any other model which beats it during [evaluation](https://github.com/jbakambana/slimebot-volleyball/blob/main/slimebot-volleyball/1_vs_1/controllers/evaluation/evaluation.py).
 
 
 ## Coming Next
