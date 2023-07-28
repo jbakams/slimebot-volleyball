@@ -1,6 +1,12 @@
 import sys
-main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
+
+## Main path if using Linux
+#main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
+
+## Main path is using windows
+main_path ="C:\\Users\\Jey\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\2_vs_2"
 sys.path.append(main_path)
+
 import os
 
 
@@ -11,7 +17,7 @@ import numpy as np
 
 from stable_baselines.common.policies import MlpPolicy
 from stable_baselines import logger
-from controllers.test_baselines.mappo2_stbl import MAPPO2 
+from agents.mappo2_stbl import MAPPO2 
 
 import pandas as pd
 
@@ -22,7 +28,12 @@ from environments.team_volleybot import TeamVolleyBot
 
 
 SEED = 425
-dir = "/trained_models/MAPPO2_425"
+
+## Directory path for trained models if using Linux
+#dir = "/trained_agents/MAPPO2_425"
+
+## Direcory path for trained models if using windows
+dir = "\\trained_agents\\MAPPO2_425"
 LOGDIR = [dir, dir]
 
 def rollout(env, models1, models2 = None):
