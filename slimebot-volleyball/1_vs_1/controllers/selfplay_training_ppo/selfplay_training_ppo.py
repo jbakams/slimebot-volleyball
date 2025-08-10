@@ -22,7 +22,7 @@ import sys
 #appending the main game directory path
 
 #####    Linux   #######
-#sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1")
+#sys.path.append("/home/usr/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1")
 
 #####    Windows    ######
 sys.path.append("C:\Users\usr\Documents\GitHub\slimebot-volleyball\slimebot-volleyball\1_vs_1")
