@@ -25,7 +25,7 @@ import sys
 #sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1")
 
 #####    Windows    ######
-sys.path.append("C:\Users\Jey\Documents\GitHub\slimebot-volleyball\slimebot-volleyball\1_vs_1")
+sys.path.append("C:\Users\usr\Documents\GitHub\slimebot-volleyball\slimebot-volleyball\1_vs_1")
 
 
 
