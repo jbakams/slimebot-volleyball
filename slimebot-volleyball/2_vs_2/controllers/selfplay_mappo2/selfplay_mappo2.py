@@ -1,5 +1,5 @@
 import sys
-main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
+main_path = "/home/usr/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
 sys.path.append(main_path)
 
 import os
