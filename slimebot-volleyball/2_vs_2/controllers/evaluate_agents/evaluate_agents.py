@@ -1,10 +1,10 @@
 import sys
 
 ## Main path if using Linux
-#main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
+#main_path = "/home/usr/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/2_vs_2"
 
 ## Main path is using windows
-main_path ="C:\\Users\\Jey\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\2_vs_2"
+main_path ="C:\\Users\\usr\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\2_vs_2"
 sys.path.append(main_path)
 
 import os
