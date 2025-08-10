@@ -1,7 +1,7 @@
 import sys
 #main_path = "/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball/1_vs_1"
 
-main_path = "C:\\Users\\Jey\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\1_vs_1"
+main_path = "C:\\Users\\usr\\Documents\\GitHub\\slimebot-volleyball\\slimebot-volleyball\\1_vs_1"
 sys.path.append(main_path)
 
 
