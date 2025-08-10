@@ -3,7 +3,7 @@ Running a random agent
 """
 
 import sys
-sys.path.append("/home/jey/Documents/GitHub/slimebot-volleyball/slimebot-volleyball")
+sys.path.append("/home/usr/Documents/GitHub/slimebot-volleyball/slimebot-volleyball")
 from environments.volleybot import VolleyBotEnv
 
 class RandomPolicy:
